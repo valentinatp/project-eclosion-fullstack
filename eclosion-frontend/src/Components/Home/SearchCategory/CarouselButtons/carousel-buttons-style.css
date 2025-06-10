@@ -1,0 +1,25 @@
+.carusel-botones { width: 100%; display: -webkit-inline-box; overflow: hidden; overflow-x: scroll; margin-bottom: 1rem; scrollbar-width: none; }
+.carusel-botones .btn { width: 40%; float: left; margin-left: 1px; margin-right: .5rem;}
+
+.carusel-botones button:last-child {
+    display: none;
+}
+
+@media (max-width: 767px) { 
+}
+/*Resolucion tablet*/
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+}
+/*Resolucion desktop*/
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .carusel-botones .btn  { max-width: 180px; height: 45px; }
+    .container-cards-categories { scrollbar-width: none; }
+}
+/*Resolucion desktop*/
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+/*Resolucion desktop*/
+/*XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }

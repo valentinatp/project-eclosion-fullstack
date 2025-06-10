@@ -1,0 +1,50 @@
+.colores-paleta-01 { background-color: #093246; }
+.colores-paleta-02 { background-color: #284D5D; }
+.colores-paleta-03 { background-color: #198683; }
+.colores-paleta-04 { background-color: #68BDB8; }
+.colores-paleta-05 { background-color: #F3EDE1; }
+/* ESTILOS GENERALES - NO MODIFICAR */
+body { color: #284D5D; font-family: "Montserrat", sans-serif;}
+h1, h2, h3, h4, h5, h6 {color: #093246; } 
+h1 { font-size: 25px; }
+h2 { font-size: 22px; }
+h3 { font-size: 21px; }
+p { color: #284D5D;  font-size: 16px; }
+img { width: 100px; height: 100px; }
+footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 0.8rem; }
+.text-justify { text-align: justify; }
+.title-site, .subtitle-site { text-align: center; }
+/* NAVBAR */
+.bg-body-tertiary { background-color: #093246 !important; color: #F3EDE1; }
+.navbar-menu-icon svg  { background-color: #F3EDE1; width: 30px; height: 30px; }
+.navbar-user-icon svg { background-color: #F3EDE1; border-radius: 50%; width: 30px; height: 30px; }
+.navbar-brand, .nav-link { color: #F3EDE1; }
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show { font-weight: 600; color: #68BDB8; }
+
+/* BOTONES */
+.btn { width: 100%; margin: .5rem 0; font-weight: 500; }
+.btn.btn-primary { background-color: #093246; border-color: #093246; color: #F3EDE1; }
+.btn.btn-secondary { background-color: #198683; border-color: #198683; color: #F3EDE1; }
+
+@media (min-width: 576px) { 
+
+}
+/*Resolucion tablet*/
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .navbar .container-fluid { padding: 0.5rem;}
+
+}
+/*Resolucion desktop*/
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .navbar-collapse { justify-content: end; }
+    .navbar .container-fluid { padding: 8px 24px; }
+    .dropdown-menu[data-bs-popper] { left: -90px; }
+}
+/*Resolucion desktop*/
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+/*Resolucion desktop*/
+/*XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }

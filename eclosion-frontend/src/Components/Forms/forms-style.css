@@ -1,0 +1,15 @@
+.modal-content {color: #093246;}
+
+.border-secondary {border: 3px solid #68BDB8 !important; }
+
+.btn-success{
+    width: 100%;
+    border-radius: 16px;
+    background-color: #F3EDE1;
+    border-width: 3px;
+    border-color: #198683;
+    color: #198683;
+    height: 80px;
+  }
+
+.btn-extra {display: none;}
