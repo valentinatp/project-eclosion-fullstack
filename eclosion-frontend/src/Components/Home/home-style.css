@@ -1,7 +1,7 @@
 .container-cards-home.card { padding: 1rem; margin-right: 0.5rem; }
 .container-cards-home.card .card-image { width: auto; border-radius: 0.5rem; height: 200px; aspect-ratio: 1/1; margin-bottom: 1rem; }
 .container-cards-home.card .card-body { padding: 0; }
-.container-cards-home.card .card-body .card-title { color: #284D5D; font-weight: 700;  word-break: break-word; font-size: 18qpx; height: 86px;  overflow: hidden; text-overflow: ellipsis; }
+.container-cards-home.card .card-body .card-title { color: #284D5D; font-weight: 700;  word-break: break-word; font-size: 18px; height: 86px;  overflow: hidden; text-overflow: ellipsis; }
 .container-cards-home.card .card-body .card-text { font-size: 16px; height: auto; max-height: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .container-cards-home.card .card-body .btn { border-radius: 0.3rem; }
 .container-cards-visibility-tablet { display: none; }
