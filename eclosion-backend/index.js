@@ -1,19 +1,26 @@
 const express = require('express');
-const PORT = 4001;
+//Importamos archivo .env para la configuracion de variables de entorno
+require('dotenv').config();
+
+//Validamos los procesos que estan corriendo
+//console.log(process.env);
 
 //Creacion de server de express
 const app = express();
 
-//Ruta de prueba
-app.get('/', (req, res) => {
-    console.log('Se requiere /');
-    res.json({
-        ok: true
-    })
-})
+//Configuramos el directorio publico para validar la conexion al servidor desde el navegador
+app.use(express.static('public'));
 
+//Ruta de prueba
+app.use('/api/auth', require('./routes/auth'));
+
+// app.get('/', (req, res) => {
+//     res.json({
+//         ok: true
+//     })
+// })
 
 //Escucha de peticiones
-app.listen(PORT, () => {
-    console.log(`Servidor activo en puerto ${PORT}`);
+app.listen( process.env.PORT , () => {
+    console.log(`Servidor activo en puerto ${ process.env.PORT }`);
 });
