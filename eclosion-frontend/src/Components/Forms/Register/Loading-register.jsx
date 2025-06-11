@@ -1,7 +1,11 @@
 import React from "react";
 import imagenesRegister from "../../../assets/imagenes-register";
 
-export default function LoadingScreen() {
+
+
+const LoadingScreen = () => {
+
+
   return (
     <div
       className="fixed inset-0 flex items-center justify-center bg-white z-50"
@@ -18,3 +22,5 @@ export default function LoadingScreen() {
     </div>
   );
 }
+
+export default LoadingScreen
