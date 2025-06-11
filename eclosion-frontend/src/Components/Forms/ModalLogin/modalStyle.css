@@ -7,10 +7,8 @@
 
 .btn-close-v2 {font-size: 34.67px; padding: 0; background: transparent; border: 0;}
 .modal-content .btn.w-100 {color: #F3EDE1;}
-.modal-content .btn:hover,
-.modal-content .btn:focus { background-color: #146c6a; color: #F3EDE1; }
-.modal-content .register-link a,
-.modal-content a.fw-bold { color: #198683; font-weight: 700; text-decoration: none; }
+.modal-content .btn:hover, .modal-content .btn:focus { background-color: #146c6a; color: #F3EDE1; }
+.modal-content .register-link a, .modal-content a.fw-bold { color: #198683; font-weight: 700; text-decoration: none; }
 #loginModal .modal-dialog {
   position: fixed;
   bottom: 0;
@@ -30,7 +28,7 @@
 .modal-content h1 {font-size: 32px;}
 .modal-content label{font-size: 18px;}
 .modal-content .btn-secondary{font-size: 18px; min-height: 62px; min-width: 270px; width: 100%; border-radius: 16px; font-weight: 700;}
- .form-control{min-width: 270px; min-height: 62px; width: 100%;}
+.modal-content .form-control{min-width: 270px; min-height: 62px; width: 100%;}
 
 
 /* Medim devices mobile 576px and up */
@@ -42,7 +40,7 @@
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .btn-close-v2 {font-size: 53.34px;}
   #loginModal .modal-dialog { min-height: 892px; min-width: 768px; }
   #loginModal .modal-content { padding: 74px 64px 78px 64px; border-radius: 40px 40px 0px 0px; }
