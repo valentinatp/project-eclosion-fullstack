@@ -15,8 +15,19 @@
 
 /* Cambia posicion y tamaño de ojo */
 
-.input-eye{ width:30px;height: 30px;} 
-
+.register-content .input-eye{ 
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  font-size: 20px;
+}
 
 /* Estilo de los botones de registro */
 .botones-registro {display: flex;justify-content: center; align-items: center;gap: 10px; margin-top: 20px;}
@@ -28,24 +39,50 @@
 .boton-volver {display: none;}
 /* de aqui para abajo solo agregar clases en los @media */
 @media (min-width: 576px) {  
-
-
-
-.input-eye {position: absolute;top: 75%;right: 40px;transform: translateY(-50%);width: 16px;height: 26px;cursor: pointer;display: flex;align-items: center; z-index: 2;}
+  .input-eye {
+    position: absolute;
+    top: 75%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+    .btn.boton-registrar {
+    width: 70%;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .input-eye {position: absolute;top: 72%;right: 50px;transform: translateY(-50%);width: 26px;height: 26px;cursor: pointer;display: flex;align-items: center; z-index: 2;}
+    .input-eye {
+        position: absolute;
+        top: 72%;
+        right: 50px;
+        transform: translateY(-50%);
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+    }
     .boton-regresar img {width:16px;height: 26px;vertical-align: middle ;}
+    .btn.boton-registrar {
+        width: 60%;
+    }
 }
 
 
 /* Desde 993px en adelante: vuelve al centrado y tamaño normal */
 @media (min-width: 992px) {
-.boton-regresar {display: none;}
-.centrado-span {margin-left: -55px}
-.botones-registro {display: flex;justify-content: center; align-items: center;gap: 10px; margin-top: 20px ; margin-left: -60px;}
-.btn.boton-registrar{width: 10%;font-weight: 500;background-color: #198683;border: 1px solid #198683;color: #F3EDE1;padding: 10px;text-align: center;border-radius: 5px;}
-.btn.boton-volver {width: 10%;font-weight: 600; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
-.input-eye {position: absolute;top: 66%;right: 80px;transform: translateY(-50%);width: 26px;height: 26px;cursor: pointer;display: flex;align-items: center; z-index: 2;}}
+    .boton-regresar {display: none;}
+    .centrado-span {margin-left: -55px}
+    .botones-registro {display: flex;justify-content: center; align-items: center;gap: 10px; margin-top: 20px; margin-left: -60px;}
+    .btn.boton-registrar{width: 10%;font-weight: 500;background-color: #198683;border: 1px solid #198683;color: #F3EDE1;padding: 10px;text-align: center;border-radius: 5px;}
+    .btn.boton-volver {width: 10%;font-weight: 600; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
+    .input-eye {position: absolute;top: 66%;right: 80px;transform: translateY(-50%);width: 26px;height: 26px;cursor: pointer;display: flex;align-items: center; z-index: 2;}
+}

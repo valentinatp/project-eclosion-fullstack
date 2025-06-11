@@ -1,32 +1,42 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './register-style.css'
 import LoadingRegister from "./loading-register";
-import imagenesRegister from "../../../assets/imagenes-register";
-import { BsChevronLeft } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+//import icon para eye y back
+import { BsChevronLeft } from "react-icons/bs";
+import { BsEye } from "react-icons/bs";
+import { BsEyeSlash } from "react-icons/bs";
+
 
 
 
 
 const Register = () => {
-  {/* Funcion de comprobacion de la contraseña */ }
+
+  // const para cambiar estado de input de password entre type text y password
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+
+    // Funcion de comprobacion de la contraseña
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  // error o succes dependiendo del comparacion de contraseña
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  //cuando success sea true, cargar pantalla de carga
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  {/* Funcion de redireccion si inicia sesion correctamente */ }
+  // Funcion de redireccion si inicia sesion correctamente
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // if para consultar primero si las contrasenas son distintas
     if (password !== confirmPassword) {
       setError(true);
       setSuccess(false);
-    } else {
+    }
+    // si las contrasenas no son distintas, activar secuenca de pantalla de carga y texto de registro exitoso
+    else {
       setError(false);
       setSuccess(true);
       setTimeout(() => {
@@ -70,39 +80,46 @@ const Register = () => {
             {/*nuevo formato para react*/}
             <div className="mb-3">
               <label htmlFor="password" className="form-label fw-bold ">Contraseña</label>
-              <div className="input-group input-group-password">
-                <span className="input-eye" onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}>
-                  <img src={showPassword ? imagenesRegister.img3 : imagenesRegister.img2} id="icon-password" alt="Ver contraseña" />
-                </span>
+              <div className="position-relative">
+
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="form-control border border-secondary border-2 imput-password input-size"
+                  className="form-control border border-secondary"
                   id="password"
-                  placeholder="Contraseña"
+                  placeholder="Ingresa tu contraseña"
                   required
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                 />
+
+                <span className="input-eye" onClick={() => setShowPassword(!showPassword)} >
+
+
+                  {showPassword ? <BsEye /> : <BsEyeSlash />}
+                </span>
 
               </div>
             </div>
 
 
 
-            <div className="mb-3 position-relative">
+            <div className="mb-3">
               <label htmlFor="confirmPassword" className="form-label fw-bold">Confirmar Contraseña</label>
-              <input
-                type={showConfirm ? "text" : "password"}
-                className="form-control border border-secondary border-2 imput-password input-size"
-                id="confirmPassword"
-                placeholder="Confirmar contraseña"
-                required
-                value={confirmPassword}
-                onChange={e => setConfirmPassword(e.target.value)}
-              />
-              <span className="input-eye" onClick={() => setShowConfirm(!showConfirm)} style={{ cursor: "pointer" }} >
-                <img src={showConfirm ? imagenesRegister.img3 : imagenesRegister.img2} alt="icono ojo cerrado" id="icon-confirmPassword" />
-              </span>
+              <div className="position-relative">
+
+                <input
+                  type={showConfirm ? "text" : "password"}
+                  className="form-control border border-secondary"
+                  id="confirmPassword"
+                  placeholder="Confirmar contraseña"
+                  required
+                  value={confirmPassword}
+                  onChange={e => setConfirmPassword(e.target.value)}
+                />
+                <span className="input-eye" onClick={() => setShowConfirm(!showConfirm)} style={{ cursor: "pointer" }} >
+                  {showConfirm ? <BsEye /> : <BsEyeSlash />} 
+                </span>
+              </div>
             </div>
 
 
