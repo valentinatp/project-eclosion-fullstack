@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingRegister from "./loading-register";
 import { Link } from 'react-router-dom';
+import ModalLogin from '../ModalLogin/ModalLogin'
 //import icon para eye y back
 import { BsChevronLeft } from "react-icons/bs";
 import { BsEye } from "react-icons/bs";
@@ -13,6 +14,13 @@ import { BsEyeSlash } from "react-icons/bs";
 
 const Register = () => {
 
+   const [modalToggled, setmodalToggled] = useState(false);
+
+    // Función para alternar el estado del modal (abrir/cerrar)
+    function handleModalToggleClick() {
+        setmodalToggled(!modalToggled);
+    }
+
   // const para cambiar estado de input de password entre type text y password
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -20,14 +28,16 @@ const Register = () => {
     // Funcion de comprobacion de la contraseña
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
   // error o succes dependiendo del comparacion de contraseña
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   //cuando success sea true, cargar pantalla de carga
+
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // Funcion de redireccion si inicia sesion correctamente
 
+  // Funcion de redireccion si inicia sesion correctamente
   const handleSubmit = (e) => {
     e.preventDefault();
     // if para consultar primero si las contrasenas son distintas
@@ -57,7 +67,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="container register-dialog" >
+      <div className="container-fluid register-dialog" >
         <div className="register-content">
           <Link to="/" className="boton-regresar"><BsChevronLeft /></Link>
           <h1 className=" fw-bold mb-2">Registro</h1>
@@ -117,7 +127,7 @@ const Register = () => {
                   onChange={e => setConfirmPassword(e.target.value)}
                 />
                 <span className="input-eye" onClick={() => setShowConfirm(!showConfirm)} style={{ cursor: "pointer" }} >
-                  {showConfirm ? <BsEye /> : <BsEyeSlash />} 
+                  {showConfirm ? <BsEye className="prueba-2" /> : <BsEyeSlash className="prueba-2"/>} 
                 </span>
               </div>
             </div>
@@ -126,9 +136,10 @@ const Register = () => {
             {/*nuevo formato para react*/}
 
 
-            <div className="botones-registro">
-              <a href="/" className="btn boton-volver">Volver</a>
-              <button type="submit" className="btn boton-registrar">Registrar</button>
+            <div className="d-flex gap-5">
+              
+              <Link to="/" className="btn btn-success fw-bold btn-extra">Volver</Link>
+              <button type="submit" className="btn btn-secondary fw-bold">Registrar</button>
             </div>
             {error && (
               <div className="form-text text-danger " id="passwordError">
@@ -143,14 +154,18 @@ const Register = () => {
 
 
 
-            <p className="text-center mt-3 centrado-span">
+            <p className="mt-4 text-center register-link">
               ¿Ya tienes una cuenta?
-              <a href="/login" className="boton-iniciar-sesion">Inicia sesión</a>
+              <Link onClick={handleModalToggleClick} to="/register">Inicia sesión.</Link>
             </p>
           </form>
         </div>
       </div>
-
+            {modalToggled && (
+                <div>
+                    <ModalLogin closeModal={() => setmodalToggled(false)} />
+                </div>
+            )}
     </>
   );
 }
