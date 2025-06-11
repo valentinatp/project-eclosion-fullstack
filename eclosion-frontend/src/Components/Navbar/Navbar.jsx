@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import ModalLogin from '../Forms/ModalLogin/ModalLogin.jsx';
+import logo from '../../assets/Pictures/React-Logo.png';
 
 const Navbar = () => {
     // Estado para controlar la visibilidad del modal
@@ -15,6 +16,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
+                    <img src={logo} alt="React Logo" className='navbar-logo'/>
                     <Link to="/" className="navbar-brand">Eclosión</Link>
                     <div className="d-flex">
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
