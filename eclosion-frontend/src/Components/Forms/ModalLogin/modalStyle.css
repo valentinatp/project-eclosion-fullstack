@@ -7,7 +7,7 @@
 
 .btn-close-v2 {font-size: 34.67px; padding: 0; background: transparent; border: 0;}
 .modal-content .btn.w-100 {color: #F3EDE1;}
-.modal-content .btn:hover, .modal-content .btn:focus { background-color: #146c6a; color: #F3EDE1; }
+.modal-content .btn:hover, .modal-content .btn:focus { background-color: #198683; color: #F3EDE1; }
 .modal-content .register-link a, .modal-content a.fw-bold { color: #198683; font-weight: 700; text-decoration: none; }
 #loginModal .modal-dialog {
   position: fixed;

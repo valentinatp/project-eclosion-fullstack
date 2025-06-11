@@ -4,11 +4,13 @@
 
 
 
-.register-dialog .register-content{ padding: 33px 24.5px 78px 24.5px; }
+.register-dialog .register-content{ padding:40px 24.5px 45px 24.5px; }
 .register-content h1{font-size: 32px;}
 .register-content p{font-size: 16px;}
-.register-content label{font-size: 18px;}
+.register-content label{font-size: 18px; color: #093246 ;}
 .register-content .form-control{min-width: 240px; min-height: 62px; width: 100%;}
+.register-content .btn-secondary{font-size: 18px; min-height: 62px; min-width: 240px; width: 100%; border-radius: 16px; font-weight: 700;}
+.register-content .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
 
 
 
@@ -30,7 +32,6 @@
 }
 
 /* Estilo de los botones de registro */
-.botones-registro {display: flex;justify-content: center; align-items: center;gap: 10px; margin-top: 20px;}
 
 .btn.boton-registrar{width: 60%;font-weight: 500;background-color: #198683;border: 1px solid #198683;color: #F3EDE1;padding: 10px;text-align: center;border-radius: 5px;}
 .boton-iniciar-sesion {color: #198683;text-decoration: none;font-weight: 700}
@@ -39,50 +40,35 @@
 .boton-volver {display: none;}
 /* de aqui para abajo solo agregar clases en los @media */
 @media (min-width: 576px) {  
-  .input-eye {
-    position: absolute;
-    top: 75%;
-    right: 40px;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 26px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    z-index: 2;
-  }
-    .btn.boton-registrar {
-    width: 70%;
-  }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .input-eye {
-        position: absolute;
-        top: 72%;
-        right: 50px;
-        transform: translateY(-50%);
-        width: 26px;
-        height: 26px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        z-index: 2;
-    }
-    .boton-regresar img {width:16px;height: 26px;vertical-align: middle ;}
-    .btn.boton-registrar {
-        width: 60%;
-    }
+    .register-dialog .register-content{ padding:38px 63px 40px 63px;}
+    
+
+    .register-content h1{font-size: 36px;}
+    .register-content p{font-size: 28px;}
+    .register-content label{font-size: 24px; color: #093246 ;}
+    .register-content .form-control{min-width: 500px; min-height: 90px; width: 100%;}
+    .register-content .btn-secondary{font-size: 32px; min-height: 80px; min-width: 391px; width: 60%; border-radius: 16px; font-weight: 700; margin: auto;}
+    .register-content .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
+    .register-content .text-center {font-size: 24px;}
+
 }
 
 
 /* Desde 993px en adelante: vuelve al centrado y tamaño normal */
 @media (min-width: 992px) {
     .boton-regresar {display: none;}
-    .centrado-span {margin-left: -55px}
-    .botones-registro {display: flex;justify-content: center; align-items: center;gap: 10px; margin-top: 20px; margin-left: -60px;}
-    .btn.boton-registrar{width: 10%;font-weight: 500;background-color: #198683;border: 1px solid #198683;color: #F3EDE1;padding: 10px;text-align: center;border-radius: 5px;}
-    .btn.boton-volver {width: 10%;font-weight: 600; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
-    .input-eye {position: absolute;top: 66%;right: 80px;transform: translateY(-50%);width: 26px;height: 26px;cursor: pointer;display: flex;align-items: center; z-index: 2;}
+    form .d-flex{ justify-content: center; }
+
+    .register-content .btn-extra {
+      
+    display: block; /* Hace visible el botón */
+    border-radius: 16px;
+    font-size: 26px; min-height: 80px; min-width: 300px; 
+  }
+   
 }
