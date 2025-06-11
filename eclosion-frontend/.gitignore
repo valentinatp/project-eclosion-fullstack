@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+register-stylePrueba.css
+RegisterPrueba.jsx
