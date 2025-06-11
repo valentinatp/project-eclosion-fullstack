@@ -21,6 +21,9 @@ footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 
 .navbar-brand, .nav-link { color: #F3EDE1; }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show { font-weight: 600; color: #68BDB8; }
 
+/* LOGO*/
+.navbar-logo {width: 70px; height: 70px; }
+
 /* BOTONES */
 .btn { width: 100%; margin: .5rem 0; font-weight: 500; }
 .btn.btn-primary { background-color: #093246; border-color: #093246; color: #F3EDE1; }
@@ -38,6 +41,7 @@ footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
+    
     .navbar-collapse { justify-content: end; }
     .navbar .container-fluid { padding: 8px 24px; }
     .dropdown-menu[data-bs-popper] { left: -90px; }
