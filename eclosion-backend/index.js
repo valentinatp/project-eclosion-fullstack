@@ -11,14 +11,10 @@ const app = express();
 //Configuramos el directorio publico para validar la conexion al servidor desde el navegador
 app.use(express.static('public'));
 
-//Ruta de prueba
-app.use('/api/auth', require('./routes/auth'));
+//Ruta inicial
+app.use('/', require('./routes/auth.router'));
 
-// app.get('/', (req, res) => {
-//     res.json({
-//         ok: true
-//     })
-// })
+
 
 //Escucha de peticiones
 app.listen( process.env.PORT , () => {
