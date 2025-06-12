@@ -22,7 +22,10 @@ footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show { font-weight: 600; color: #68BDB8; }
 
 /* LOGO*/
-.navbar-logo {width: 70px; height: 70px; }
+.navbar-logo {width: 70px; height: 70px; object-fit: contain;}
+.navbar-logo:hover {transition: 2.2s ease-out; transform: rotateY(360deg);}
+.navbar-brand { font-size: 23px; font-weight: 450;}
+.navbar-logo-brand { display: flex; align-items: center; gap: 18px;}
 
 /* BOTONES */
 .btn { width: 100%; margin: .5rem 0; font-weight: 500; }
