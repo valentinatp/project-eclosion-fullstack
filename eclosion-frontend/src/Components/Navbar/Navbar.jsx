@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from "react";
 import ModalLogin from '../Forms/ModalLogin/ModalLogin.jsx';
 import logo from '../../assets/Pictures/React-Logo-v2.png';
-import { animate } from 'animejs';
+// import { animate } from 'animejs';
 
 const Navbar = () => {
     // Estado para controlar la visibilidad del modal
