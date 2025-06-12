@@ -5,6 +5,7 @@ import Home from './Components/Home/Home'
 import Layout from './pages/Layout'
 import Register from './Components/Forms/Register/register'
 import Feed from './Components/Feed/Feed'
+import About from './Components/About Us/About'
 
 
 export const router = createBrowserRouter(
@@ -14,6 +15,7 @@ export const router = createBrowserRouter(
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/feed" element={<Feed />} />
+            <Route path="/about" element={<About />} />
             <Route path="/ejemplo" element={<h1>Hola ejemplo</h1>} />
         </Route>
     )
