@@ -20,6 +20,10 @@ const loginUser = async (req, res) => {
     })
 }
 
+const userId = async (req, res) => {
+    res.status(201).send("Esta es la ruta de usuario/perfil");
+}
+
 const createNews = async (req, res) => {
     res.status(201).json({
         ok: true,
@@ -34,5 +38,6 @@ const createNews = async (req, res) => {
 module.exports = {
     createUser,
     loginUser,
-    createNews
+    userId,
+    createNews,
 }
