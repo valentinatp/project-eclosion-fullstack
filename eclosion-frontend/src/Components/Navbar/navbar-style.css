@@ -1,3 +1,5 @@
+/* Altura de Navbar */
+.navbar-expand-lg{min-height: 100px;}
 
 /* NAVBAR LOGO*/
 .navbar-logo {width: 55px; height: 55px; object-fit: contain;}
@@ -34,7 +36,7 @@
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-    
+    .navbar-expand-lg{min-height: 150px;}
     .navbar-collapse { justify-content: end; }
     .navbar .container-fluid {  }
     /*  padding: */
