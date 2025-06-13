@@ -54,7 +54,7 @@
 @media (min-width: 992px) { 
     .navbar-collapse { justify-content: end; }
     .btn { width: 100%; max-width: 164px; height: 40px;}
-    .navbar .container-fluid { padding: 8px 24px; }
+    .navbar-feed .container-fluid { padding: 8px 24px; }
     .dropdown-menu[data-bs-popper] { left: -90px; }
 }
 /*Resolucion desktop*/

@@ -25,7 +25,8 @@ function Feed() {
         <>
             {/* Contenido de pagina */}
             <br />
-            <main className="container-fluid">
+            
+            <div className="container-fluid">
                 <h1 className="text-center">Noticias compartidas</h1>
                 <br />
                 <section>
@@ -34,7 +35,7 @@ function Feed() {
                             {/*card 1*/}
                             <div className="card mb-4 card-feed">
                                 {/*Perfil usuario*/}
-                                <nav className="navbar bg-body-tertiary-perfil">
+                                <nav className="navbar-feed bg-body-tertiary-perfil">
                                     <div className="container-fluid">
                                         <a className="navbar-brand d-flex align-items-center">
                                             <img
@@ -109,7 +110,7 @@ function Feed() {
                             {/*card 2*/}
                             <div className="card mb-4 card-feed">
                                 {/*Perfil usuario*/}
-                                <nav className="navbar bg-body-tertiary-perfil">
+                                <nav className="navbar-feed bg-body-tertiary-perfil">
                                     <div className="container-fluid">
                                         <a className="navbar-brand d-flex align-items-center">
                                             <img
@@ -165,7 +166,7 @@ function Feed() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
         </>
     );
 }
