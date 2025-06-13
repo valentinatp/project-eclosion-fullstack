@@ -12,6 +12,7 @@ import { BsEyeSlash } from "react-icons/bs";
 
 
 
+
 const Register = () => {
 
    const [modalToggled, setmodalToggled] = useState(false);
@@ -138,16 +139,16 @@ const Register = () => {
 
             <div className="d-flex gap-5">
               
-              <Link to="/" className="btn btn-success fw-bold btn-extra">Volver</Link>
+              <Link to="/" className="btn btn-success boton-volver fw-bold btn-extra">Volver</Link>
               <button type="submit" className="btn btn-secondary fw-bold">Registrar</button>
             </div>
             {error && (
-              <div className="form-text text-danger " id="passwordError">
+              <div className="alert alert-danger" role="alert" id="passwordError">
                 Las contraseñas no coinciden.
               </div>
             )}
             {success && (
-              <div id="registroExitoso" className="alert alert-success " role="alert">
+              <div className="alert alert-success " role="alert" id="registroExitoso">
                 ¡Se registró correctamente!
               </div>
             )}
