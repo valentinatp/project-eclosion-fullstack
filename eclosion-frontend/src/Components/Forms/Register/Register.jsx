@@ -69,6 +69,8 @@ const Register = () => {
     <>
       <div className="container-fluid register-dialog" >
         <div className="register-content">
+
+          {/* <BsChevronLeft /> esta etiqueta es un icono que se puede remplazar por cualquier cosa */}
           <Link to="/" className="boton-regresar"><BsChevronLeft /></Link>
           <h1 className=" fw-bold mb-2">Registro</h1>
           <p className="mb-4"><strong>Regístrate</strong> ingresando los siguientes datos</p>

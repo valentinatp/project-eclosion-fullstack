@@ -51,7 +51,8 @@ footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 
 @media (min-width: 992px) { 
     
     .navbar-collapse { justify-content: end; }
-    .navbar .container-fluid { padding: 8px 24px; }
+    .navbar .container-fluid { padding: 0px 24px; }
+    /*  padding: */
     .dropdown-menu[data-bs-popper] { left: -90px; }
 }
 /*Resolucion desktop*/
