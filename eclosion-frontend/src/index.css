@@ -118,9 +118,7 @@ img {
         font-size: 24px;
     }
 
-    .container-fluid {
-        padding: 32px;
-    }
+
 }
 
 /*Resolucion tablet*/
@@ -142,7 +140,10 @@ img {
         font-size: 20px;
     }
 
-    .card {
+    .container-cards .card {
+        max-width: 320px;
+    }
+    .container-cards-categories .card {
         max-width: 320px;
     }
 
