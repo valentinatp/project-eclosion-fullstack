@@ -6,8 +6,15 @@ const morgan = require('morgan')
 //Validamos los procesos que estan corriendo
 //console.log(process.env);
 
+//Importamos cors
+//Paquete que nos permite permitir o restringir accesos de dominios externos.
+const cors = require('cors');
+
+
 //Creacion de server de express
 const app = express();
+//cors permite a otros sitios web hacer solicitudes a nuestra aplicacion
+app.use(cors())
 
 //utilizamos el middleware morgan
 app.use(morgan("dev"))
