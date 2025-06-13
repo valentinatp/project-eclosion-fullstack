@@ -6,6 +6,6 @@ router.get('/login', loginUser )
 
 router.get('/register', createUser )
 
-router.get('/feed', createNews )
+//router.get('/feed', createNews/recargar las noticias del feed -> ejemplo que consulte a la base de datos y actualice le contenido )
 
 module.exports = router;
