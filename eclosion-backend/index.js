@@ -1,12 +1,16 @@
 const express = require('express');
 //Importamos archivo .env para la configuracion de variables de entorno
 require('dotenv').config();
-
+//Importamos Morgan para registrar las consultas HTTP en el log
+const morgan = require('morgan')
 //Validamos los procesos que estan corriendo
 //console.log(process.env);
 
 //Creacion de server de express
 const app = express();
+
+//utilizamos el middleware morgan
+app.use(morgan("dev"))
 
 //Configuramos el directorio publico para validar la conexion al servidor desde el navegador
 app.use(express.static('public'));
