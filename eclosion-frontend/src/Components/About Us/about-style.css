@@ -1,0 +1,78 @@
+.container-about-us {display: grid; min-height: unset; }
+
+.about-intro-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    margin-bottom: 30px;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.about-title {
+    text-align: left;
+}
+
+.about-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    justify-items: right;
+}
+
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+/*Resolucion Mobile*/
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) { 
+    .about-logo {
+        width: 120px;
+        height: 120px;
+        
+    }
+}
+
+/*Resolucion Tablet*/
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .about-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+}
+/*Resolucion desktop*/
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .about-intro-row {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.about-title {
+    text-align: left;
+    font-size: 38px;
+    padding: 50px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 70px;
+    margin-right: 0px;
+}
+
+.eclosion-logo {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    align-self: center;
+}
+
+}
+/*Resolucion desktop*/
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+/*Resolucion desktop*/
+/*XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
