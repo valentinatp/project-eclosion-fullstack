@@ -1,12 +1,11 @@
-const { createUser, loginUser, createNews, userId } = require('../controllers/users.controller')
+const { createUser, loginUser, createNews, registerUser, refreshNews, userId } = require('../controllers/users.controller')
 const { Router } = require('express')
 const router = Router();
 
-router.get('/login', loginUser ) //deberia ser POST(?)
-
-router.get('/register', createUser )
-
+router.post('/login', loginUser ) //deberia ser POST(?)
+router.post('/register', registerUser )
 router.get('/user', userId )
-//router.get('/feed', createNews/recargar las noticias del feed -> ejemplo que consulte a la base de datos y actualice le contenido )
+router.get('/feed', refreshNews )
+
 
 module.exports = router;
