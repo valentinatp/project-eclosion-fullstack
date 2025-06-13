@@ -2,16 +2,26 @@
 import { useState } from 'react';
 import './feed-style.css';
 import { Link } from 'react-router-dom';
+import { FaRegHeart } from "react-icons/fa"; //corazon
+import { FaHeart } from "react-icons/fa"; //corazon lleno
+import { FaRegComments } from "react-icons/fa"; //comentarios
+import { FaComments } from "react-icons/fa6"; //comentario relleno
+import { IoClose } from "react-icons/io5";
+import { IoIosSend } from "react-icons/io";
+
+
 
 function Feed() {
     const [show, setShow] = useState(false);
+    const [liked, setLiked] = useState([false, false]);
+    const [commented, setCommented] = useState([false, false]);
+    const [activeIndex, setActiveIndex] = useState(null);
 
     // Funciones para abrir y cerrar el modal
     const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    
 
     // Estado para manejar los "me gusta" en las tarjetas
-    const [liked, setLiked] = useState([false, false]);
 
     const handleLike = (index) => {
         setLiked((prev) => {
@@ -19,7 +29,23 @@ function Feed() {
             updated[index] = !updated[index];
             return updated;
         });
-    };
+        };
+
+   // Estado para manejar los "comentarios" en las tarjetas
+        const handleComment = (index) => {
+        setCommented((prev) => {
+        const updated = [...prev];
+        updated[index] = !updated[index];
+        return updated;
+        });
+         setActiveIndex(index);
+         setShow(true);
+                };
+    
+     const handleClose = () => {
+            setShow(false);
+            setActiveIndex(null);
+            };
 
     return (
         <>
@@ -75,29 +101,49 @@ function Feed() {
                                     <div className="btn-group-feed">
                                         <button
                                             type="button"
-                                            className={`btn btn-outline-danger like-btn${liked[0] ? " btn-liked" : ""}`}
-                                            onClick={() => handleLike(0)}
-                                        >
-                                            <i className={`bi ${liked[0] ? "bi-heart-fill" : "bi-heart"}`} />
+                                            className={`btn btn-outline-danger ${liked[0] ? "": ""}`}
+                                            onClick={() => handleLike(0)}>
+
+                                            {liked[0] ? (<FaHeart color="red" size={20} />) : (<FaRegHeart color="red" size={20} />)}
                                         </button>
-                                        <button type="button" className="btn btn-outline-danger" onClick={handleShow}>
-                                            <i className="bi bi-chat-dots" />
-                                        </button>
-                                        <button type="button" className="btn btn-outline-danger">
-                                            <i className="bi bi-send" />
-                                        </button>
+
+                                        <button
+                                           type="button"
+                                           className={`btn btn-outline-danger ${commented[0] ? "": ""}`}
+                                            onClick={() => {
+                                                        handleComment(0);
+                                                    }}
+                                                    >
+                                                {commented[0] ? (<FaComments color="red" size={20} />) : (<FaRegComments color="red" size={20} />)}
+                                                            </button>
+
+                                       <button type="button" className="btn btn-outline-danger">
+                                            <IoIosSend color="red" size={20} />
+                                                </button>
+                                        
+                                    
                                         { /* Modal para comentarios */}
-                                        {show && (
+                                        {show && activeIndex === 0 &&(
                                             <div className="modal-feed" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog">
                                                 <div className="modal-dialog modal-content">
                                                     <div className="modal-header">
-                                                        <h1 className="modal-tittle" id="tituloModal">Comentarios</h1>
-                                                        <button type="button" className="btn-close" onClick={handleClose}></button>
+                                                        <h1 className="modal-tittle" id="tituloModal">Comentarios</h1> 
                                                     </div>
-                                                    <div className="modal-body">
+
+                                                    {/* Aquí podrías agregar un formulario para enviar comentarios */}
+                                                    <div 
+                                                       className="modal-body d-flex justify-content-center">
+                                                    <button onClick={handleClose} style={{
+                                                        border: "1px solid red",
+                                                        margin: '0 auto',
+                                                        background: "transparent",
+                                                        padding: "10px",
+                                                        }} >
+                                                       <IoClose color='red' size={20} /></button>
                                                     </div>
-                                                    <div className="modal-footer">
-                                                        {/* Aquí podrías agregar un formulario para enviar comentarios */}
+                                                    <div className="modal-footer"> 
+                                                     
+                                                     
                                                     </div>
                                                 </div>
                                             </div>
@@ -149,17 +195,47 @@ function Feed() {
                                     <div className="btn-group-feed">
                                         <button
                                             type="button"
-                                            className={`btn btn-outline-danger like-btn${liked[1] ? " btn-liked" : ""}`}
-                                            onClick={() => handleLike(1)}
-                                        >
-                                            <i className={`bi ${liked[1] ? "bi-heart-fill" : "bi-heart"}`} />
+                                            className={`btn btn-outline-danger ${liked[1] ? "": ""}`}
+                                            onClick={() => handleLike(1)}>
+
+                                            {liked[1] ? (<FaHeart color="red" size={20} />) : (<FaRegHeart color="red" size={20} />)}
                                         </button>
-                                        <button type="button" className="btn btn-outline-danger">
-                                            <i className="bi bi-chat-dots" />
-                                        </button>
-                                        <button type="button" className="btn btn-outline-danger">
-                                            <i className="bi bi-send" />
-                                        </button>
+
+
+                                        <button
+                                           type="button"
+                                           className={`btn btn-outline-danger ${commented[1] ? "": ""}`}
+                                            onClick={() => {
+                                                        handleComment(1);
+                                                    }}
+                                                    >
+                                                {commented[1] ? (<FaComments color="red" size={20} />) : (<FaRegComments color="red" size={20} />)}
+                                                </button>
+
+                                                 <button type="button" className="btn btn-outline-danger">
+                                                 <IoIosSend color="red" size={20} />
+                                                </button>
+
+
+                                                {show && activeIndex === 1 && (
+                                                        <div className="modal-feed" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog">
+                                                            <div className="modal-dialog modal-content">
+                                                            <div className="modal-header">
+                                                                <h1 className="modal-tittle" id="tituloModal">Comentarios</h1> 
+                                                            </div>
+                                                            <div className="modal-body d-flex justify-content-center">
+                                                                <button onClick={handleClose} style={{
+                                                                border: "1px solid red",
+                                                                margin: '0 auto',
+                                                                background: "transparent",
+                                                                padding: "10px",
+                                                                }}>
+                                                                <IoClose color='red' size={20} />
+                                                                </button>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                )}         
                                     </div>
                                 </div>
                             </div>
