@@ -28,26 +28,24 @@ const registerUser = (req, res) => {
         }
     })
 }
-//Controlador registro usuario
-const createUser = (req, res) => {
-    res.status(201).json({
-        ok: true,
-        id: "0",
-        name: "valentina",
-        lastName: "toledo",
-        edad: "29",
-        email: "valentina@gmail.com",
-        password: "1234",
-        typeUser: "usuario",
-        status: false,
-    })
-}
 //Controlador login usuario
 const loginUser = (req, res) => {
+    const { email, password } = req.body
+    //Validamos los datos de los parametros
+    if (!email || !password) {
+        res.status(400).json({
+            message : "Faltan datos para iniciar sesion",
+        })
+        return
+    }
+    //Aca debo agregar la logica para la BD
     res.status(200).json({
-        ok: true,
-        nameUser: "valeMdfcka",
-        password: "1234",
+        message: "Usuario logeado correctamente",
+        code : 200,
+        data: {
+            email: email,
+            password: password,
+        }
     })
 }
 //Controlador consultar usuario por id
@@ -71,7 +69,6 @@ const refreshNews = (req, res) => {
 }
 
 module.exports = {
-    createUser,
     registerUser,
     loginUser,
     userId,
