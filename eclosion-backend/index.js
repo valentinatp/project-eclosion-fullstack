@@ -13,10 +13,10 @@ const app = express();
 app.use(morgan("dev"))
 
 //Configuramos el directorio publico para validar la conexion al servidor desde el navegador
-app.use(express.static('public'));
+app.use(express.static('./src/public'));
 
 //Ruta inicial
-app.use('/', require('./routes/auth.router'));
+app.use('/', require('./src/routes/auth.router'));
 
 
 
