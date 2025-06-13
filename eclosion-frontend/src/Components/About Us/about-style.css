@@ -1,24 +1,26 @@
-.container-about-us {display: grid; min-height: unset; }
-
-.about-intro-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
-    margin-bottom: 30px;
-    gap: 12px;
-    overflow: hidden;
+.about-intro-wrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
 }
-
-.about-title {
-    text-align: left;
+/*título about us y logo*/
+.item-1 {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.item-2 {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .about-logo {
     width: 100px;
     height: 100px;
-    object-fit: contain;
-    justify-items: right;
 }
 
 
@@ -46,30 +48,7 @@
 }
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) { 
-    .about-intro-row {
-    display: flex;
-    align-items: center;
-    gap: 100px;
-}
-.about-title {
-    text-align: left;
-    font-size: 38px;
-    padding: 50px;
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-bottom: 70px;
-    margin-right: 0px;
-}
-
-.eclosion-logo {
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-    align-self: center;
-}
-
-}
+@media (min-width: 992px) {  }
 /*Resolucion desktop*/
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  }
