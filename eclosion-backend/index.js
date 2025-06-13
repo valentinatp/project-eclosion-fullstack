@@ -11,7 +11,8 @@ const app = express();
 
 //utilizamos el middleware morgan
 app.use(morgan("dev"))
-
+//Utilizamos el middleware 'json' para parsear el contenido del 'body' de la request para la correcta lectura de los datos
+app.use(express.json())
 //Configuramos el directorio publico para validar la conexion al servidor desde el navegador
 app.use(express.static('./src/public'));
 

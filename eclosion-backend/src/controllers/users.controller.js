@@ -1,19 +1,35 @@
 //Controlador crear usuario
-const createUser = async (req, res) => {
+const registerUser = (req, res) => {
+    //Recibimos los campos del usuario { id, name, lastname, age, email, psw, typeUser, statusActive }
+    const { id, name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
+    //Validamos que los datos se inyecten correctamente
+    if (!id || !name || !lastName || !age || !email || !password || !typeUser || !statusActive) {
+        //Si falta algun parametro se indica el error al cliente
+        res.status(400).json({
+            message : "Faltan datos para la creacion del usuario",
+        })
+        return
+    }
+    //Aca debo agregar la logica para la BD
+    
+    //Respondemos la consulta al usuario
     res.status(201).json({
-        ok: true,
-        id: "0",
-        name: "valentina",
-        lastName: "toledo",
-        edad: "29",
-        email: "valentina@gmail.com",
-        password: "1234",
-        typeUser: "usuario",
-        status: false,
+        message: "Usuario registrado correctamente",
+        code : 201,
+        data: {
+            id: id,
+            name: name,
+            lastName: lastName,
+            age: age,
+            email: email,
+            password: password,
+            typeUser: typeUser,
+            statusActive: statusActive,
+        }
     })
 }
 //Controlador registro usuario
-const registerUser = async (req, res) => {
+const createUser = (req, res) => {
     res.status(201).json({
         ok: true,
         id: "0",
@@ -27,7 +43,7 @@ const registerUser = async (req, res) => {
     })
 }
 //Controlador login usuario
-const loginUser = async (req, res) => {
+const loginUser = (req, res) => {
     res.status(200).json({
         ok: true,
         nameUser: "valeMdfcka",
@@ -35,11 +51,11 @@ const loginUser = async (req, res) => {
     })
 }
 //Controlador consultar usuario por id
-const userId = async (req, res) => {
+const userId = (req, res) => {
     res.status(201).send("Esta es la ruta de usuario/perfil");
 }
 //Controlador crear nueva noticia
-const createNews = async (req, res) => {
+const createNews = (req, res) => {
     res.status(201).json({
         ok: true,
         id: "0",
@@ -50,7 +66,7 @@ const createNews = async (req, res) => {
     })
 }
 //Controlador consulta a la BD para actualizar noticias en feed
-const refreshNews = async (req, res) => {
+const refreshNews = (req, res) => {
     res.status(200).send("Esta es la ruta para recargar el Feed");
 }
 
