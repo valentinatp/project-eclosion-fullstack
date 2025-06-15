@@ -1,108 +1,134 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import profiles from "./profiles"; // ajusta esta ruta si es diferente
+import "./myperfile.css";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 
 const Myperfile = () => {
+ 
+   const user = profiles[0];
+   const [showPassword, setShowPassword] = useState(false);
+   const [showNewPassword, setShowNewPassword] = useState(false);
+
+   const togglePassword = () => setShowPassword(!showPassword);
+   const toggleNewPassword = () => setShowNewPassword(!showNewPassword);
+
   return (
-    <div className="row">
-      <div className="col-4">
-        <nav
-          id="navbar-example3"
-          className="h-100 flex-column align-items-stretch pe-4 border-end"
-        >
-          <nav className="nav nav-pills flex-column ">
-            <h1 className="" href="#item-1">Mi Perfil</h1>
-
-
-            <nav className="nav nav-pills flex-column ">
-              <a className="nav-link ms-3 my-1 myperfile" href="#item-1-1">
-                Datos usuario
-              </a>
-              <a className="nav-link ms-3 my-1" href="#item-1-2">
-                Cambiar contraseña
-              </a>
-            </nav>
-
-
-            <h1 className="" href="#item-2">
-             Asociar otra cuenta
-            </h1>
-            <a className="nav-link" href="#item-3">
-              Vincular cuenta
-            </a>
+    <div className="container mt-5">
+      <div className="row">
+        {/* Menú lateral */}
+        <div className="col-md-4">
+          <nav
+            id="navbar-example3"
+            className="h-100 flex-column align-items-stretch pe-4 border-end"
+          >
+            <span className="nav-heading" style={{fontSize: '32px'}}>Mi Perfil</span>
             <nav className="nav nav-pills flex-column">
-              <a className="nav-link ms-3 my-1" href="#item-3-1">
-                Eliminar Cuenta
-              </a>
-              <a className="nav-link ms-3 my-1" href="#item-3-2">
-                Invita a un amigo
-              </a>
-               <h1 className="" href="#item-2">
-                   Notificaciones
-                  </h1>
-                  <a className="nav-link ms-3 my-1" href="#item-4-1">
-                Configura Notificaciones
-              </a>
-              <h1 className="" href="#item-2">
-                   Actividad
-                  </h1>
-                  <a className="nav-link ms-3 my-1" href="#item-4-2">
-                Tu Reacciones
-              </a>
-                <a className="nav-link ms-3 my-1" href="#item-4-3">
-                                Tu Publicaciones
-                              </a>
-                              <a className="nav-link ms-3 my-1" href="#item-4-3">
-                                Tu Tiempo 
-                              </a>
-
+              <a className="nav-link ms-3 my-1" style={{ color: '#093246', fontSize: '20px' }} href="#datos-usuario">Datos usuario</a>
+              <a className="nav-link ms-3 my-1" style={{ color: '#093246', fontSize: '20px' }} href="#cambiar-pass">Cambiar contraseña</a>
+              <a className="nav-link ms-3 my-1" style={{ color: '#093246', fontSize: '20px' }}href="#eliminar-cuenta">Eliminar cuenta</a>
+              <a className="nav-link ms-3 my-1" style={{ color: '#093246', fontSize: '20px' }}href="#actividad">Actividad</a>
             </nav>
           </nav>
-        </nav>
-      </div>
+              
+        </div>
 
-      <div className="col-8">
-        <div
-          data-bs-spy="scroll"
-          data-bs-target="#navbar-example3"
-          data-bs-smooth-scroll="true"
-          className="scrollspy-example-2"
-          tabIndex="0"
-        >
-          <div id="item-1">
-            <h4>Datos de usuario</h4>
-            
+        {/* Contenido del perfil */}
+        <div className="col-md-8">
+          <div
+            data-bs-spy="scroll"
+            data-bs-target="#navbar-example3"
+            data-bs-smooth-scroll="true"
+            className="scrollspy-example-2"
+            tabIndex="0"
+          >
+            <div id="datos-usuario" className="mb-5">
+              <h4>Datos de Usuario</h4>
+              <div className="text-center mb-4">
+                <img
+                  src={user.img_user}
+                  className="rounded-circle"
+                  alt="Avatar"
+                  style={{ width: 100, height: 100, objectFit: "cover" }}
+                />
+                <div>
+                  <button className="btn btn-secondary">
+                    Cambiar Foto
+                  </button>
+                </div>
+              </div>
+              <form>
+                <div className="mb-3 imput-perfils ">
+                  <label>Nombre completo</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={user.user}
+                    readOnly
+                  />
+                </div>
+                <div className="mb-3 imput-perfils">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    value={user.mail_user}
+                    readOnly
+                  />
+                </div>
+              </form>
+            </div>
 
-          </div>
-          <div id="item-1-1">
-            <p>Nombre y apellido:</p>
-            <p>edad:</p>
-          </div>
-          <div id="item-1-2">
-            <h5>Cambia de contraseña</h5>
-            <p>ingresa tu actual contraseña:</p>
-            <p>ingresa tu nueva contraseña:</p>
-          </div>
-          <div id="item-2">
-            <h4>Vincular otra cuenta </h4>
-          </div>
+            <div id="cambiar-pass" className="mb-5 imput-perfils">
+              <h4>Cambiar Contraseña</h4>
+              <form>
+                <div className="mb-3 position-relative">
+                  <label>Contraseña actual</label>
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className="form-control imput-perfils"
+                  />
+                  <span
+                    onClick={togglePassword}
+                    style={{ position: "absolute", top: "38px", right: "10px", cursor: "pointer" }}
+                  >
+                    {showPassword ? <BsEyeSlash /> : <BsEye />}
+                  </span>
+                </div>
+                <div className="mb-3 position-relative">
+                  <label>Nueva contraseña</label>
+                  <input
+                    type={showNewPassword ? "text" : "password"}
+                    className="form-control"
+                  />
+                  <span
+                    onClick={toggleNewPassword}
+                    style={{ position: "absolute", top: "38px", right: "10px", cursor: "pointer" }}
+                  >
+                    {showNewPassword ? <BsEyeSlash /> : <BsEye />}
+                  </span>
+                </div>
+                <button className="btn btn-secondary">Actualizar</button>
+              </form>
+            </div>
 
-          <div id="item-3">
-            <p>vincula con google -facebook - mac</p>
-          </div>
-          <div id="item-3-1">
-            <h5>Desactivar cuenta</h5>
-            <p>Desactive account</p>
-          </div>
-          <div id="item-3-2">
-            <h5>Invita a un amigo</h5>
-            <p>Link para compartir </p>
-          </div>
-         <div id="item-4-1">
-            <h5>Notificaciones</h5>
-            <p>Activar/desactivar </p>
-          </div>
+            <div id="eliminar-cuenta" className="mb-5">
+              <h4>Eliminar Cuenta</h4>
+              <button className="btn btn-secondary">
+                Desactivar
+              </button>
+            </div>
 
+            <div id="actividad" className="mb-5">
+              <h4>Actividad</h4>
+              <ul>
+                <li>Publicaciones recientes</li>
+                <li>Comentarios</li>
+                <li>Tiempo en la plataforma</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
