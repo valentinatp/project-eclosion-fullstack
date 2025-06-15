@@ -36,7 +36,6 @@
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-    .navbar-expand-lg{min-height: 150px;}
     .navbar-collapse { justify-content: end; }
     .navbar .container-fluid {  }
     /*  padding: */

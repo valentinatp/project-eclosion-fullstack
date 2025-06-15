@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 //Creamos el Schema del modelo
 const userSchema = new Schema({
+
+
     name: {
         type: String,
         required: true,
