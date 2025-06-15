@@ -52,7 +52,7 @@ const registerUser = async (req, res) => {
         let usuario = await User.findOne({ email });
         console.log(usuario)
         if ( usuario ) {
-            return res.status(404).json({ uid : usuario.id, message : "El correo ya ha sido registrado previamente" })
+            return res.status(404).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
         }
         await User.create({
             name, lastName, age, email, password, typeUser, statusActive
@@ -61,7 +61,6 @@ const registerUser = async (req, res) => {
         res.status(201).json({
             //Respondemos la consulta al usuario
             message: "Usuario registrado correctamente",
-
             code: 201,
 
         })
