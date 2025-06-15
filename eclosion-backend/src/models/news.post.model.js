@@ -25,6 +25,6 @@ const newsSchema = new Schema({
 })
 
 //Creamos la instancia del modelo indicandole la coleccion y su Schema como parametro
-const NewsPost = model("NewsPost", newsSchema);//El nombre de la coleccion se escribe en singular y con la primera letra en mayuscula ('collection: users' -> 'User').
+const Newspost = model("Newspost", newsSchema);
 
-module.exports = NewsPost;
+module.exports = Newspost;
