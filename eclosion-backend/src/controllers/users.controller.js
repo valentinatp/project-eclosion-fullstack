@@ -1,39 +1,9 @@
 
 //imporatamos el modelo
 const User = require('../models/user.model')
-const NewPost = require('../models/news.post.model')
-//Controlador crear usuario
-const registerUser = async (req, res) => {
-    //Recibimos los campos del usuario { id, name, lastname, age, email, psw, typeUser, statusActive }
-    const { id, name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
-    //Validamos que los datos se inyecten correctamente
-    if (!id || !name || !lastName || !age || !email || !password || !typeUser || !statusActive) {
-        //Si falta algun parametro se indica el error al cliente
-        res.status(400).json({
-            message : "Faltan datos para la creacion del usuario",
-        })
-        return
-    }
-    //Aca debo agregar la logica para la BD
-    try { 
-        //Creamos un nuevo recurso
-        //modelo + metodo
-        await User.create({
-            id, name, lastName, age, email, password, typeUser, statusActive
-        })
-        res.status(201).json({
-            //Respondemos la consulta al usuario
-            message: "Usuario registrado correctamente",
-            code : 201,
-        })
-    } catch(error) {
-        console.log(error)
-        res.status(500).json({
-            message: "Error al registrar el usuario",
-            error: error.message,
-        })
-    }
-}
+
+const Newspost = require('../models/news.post.model')
+
 //Controlador login usuario
 const loginUser = (req, res) => {
     const { email, password } = req.body
@@ -62,10 +32,44 @@ const loginUser = (req, res) => {
         })
     }
 }
-//Controlador consultar usuario por id
-const userId = (req, res) => {
-    res.status(201).send("Esta es la ruta de usuario/perfil");
+
+//Controlador crear usuario
+const registerUser = async (req, res) => {
+    const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
+
+
+    //Validamos que los datos se inyecten correctamente
+    if ( !name || !lastName || !age || !email || !password || !typeUser || !statusActive) {
+        //Si falta algun parametro se indica el error al cliente
+        res.status(400).json({
+            message : "Faltan datos para la creacion del usuario",
+        })
+        return
+    }
+
+
+    try { 
+        await User.create({
+            name, lastName, age, email, password, typeUser, statusActive
+
+        })
+        res.status(201).json({
+            //Respondemos la consulta al usuario
+            message: "Usuario registrado correctamente",
+
+            code: 201,
+
+        })
+    } catch(error) {
+        console.log(error)
+        res.status(500).json({
+            message: "Error al registrar el usuario",
+            error: error.message,
+        })
+    }
 }
+
+
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {
     //Recibimos los campos del usuario
@@ -73,6 +77,7 @@ const createNews = async (req, res) => {
     //Validamos que los datos se inyecten correctamente
     if ( !author || !category || !title || !bodyNews || !dateNews  ) {
         //Si falta algun parametro se indica el error al cliente
+
         res.status(400).json({
             message : "Faltan datos para la creacion del post",
         })
@@ -80,13 +85,15 @@ const createNews = async (req, res) => {
     }
     try { 
         //Creamos un nuevo recurso
-        await NewPost.create({
+
+        await Newspost.create({
             author, category, title, bodyNews, dateNews
         })
         res.status(201).json({
             //Respondemos la consulta al usuario
             message: "Post creado correctamente",
             code : 201,
+
         })
     } catch(error) {
         console.log(error)
@@ -96,6 +103,14 @@ const createNews = async (req, res) => {
         })
     }
 }
+
+//Controlador consultar usuario por id
+const userId = (req, res) => {
+    res.status(201).send("Esta es la ruta de usuario/perfil");
+}
+
+
+
 
 //Controlador consulta a la BD para actualizar noticias en feed
 const refreshNews = (req, res) => {
