@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <footer className="text-center">
-            <span className="">Desarrollado por Grupo Pulso Ecomarino.</span>
+            <span className="">Desarrollado por Grupo Pulso EcoMarinos</span>
         </footer>
     )
 }
