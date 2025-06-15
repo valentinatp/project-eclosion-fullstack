@@ -8,7 +8,9 @@ margin: 0%;
 
 
 .card-feed {
+
     width: 390px;
+
     box-sizing: border-box;
     margin-top: 214px;
     overflow: hidden;
@@ -17,6 +19,7 @@ margin: 0%;
 
 }
 
+
 #img-notice-card{
     height: 358px;
     width: 333px;
@@ -24,8 +27,13 @@ margin: 0%;
     position: relative ;
     border: 3px solid #198683;
 
+
 }
 
+
+.row .col{
+    padding: auto 25;
+}
 .btn-group-feed .btn {
     width: auto !important;
     margin: 0 !important;
@@ -49,15 +57,16 @@ margin: 0%;
     h1 { font-size: 32px; }
     h2 { font-size: 28px; }
     h3 { font-size: 24px; }
-    .container-fluid { padding: 32px; }
+    
 }
 /*Resolucion tablet*/
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     h1 { font-size: 34px; }
     h2 { font-size: 30px; }
     h3 { font-size: 28px; }
     p { font-size: 20px; }
+
     .card { max-width: 320px; }
 
     .card-feed {
@@ -70,6 +79,7 @@ margin: 0%;
     width: 468px;
     left: 30px;
 }
+
 
 }
 /*Resolucion desktop*/

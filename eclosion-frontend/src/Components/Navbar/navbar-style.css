@@ -1,19 +1,5 @@
-.colores-paleta-01 { background-color: #093246; }
-.colores-paleta-02 { background-color: #284D5D; }
-.colores-paleta-03 { background-color: #198683; }
-.colores-paleta-04 { background-color: #68BDB8; }
-.colores-paleta-05 { background-color: #F3EDE1; }
-/* ESTILOS GENERALES - NO MODIFICAR */
-body { color: #284D5D; font-family: "Montserrat", sans-serif;}
-h1, h2, h3, h4, h5, h6 {color: #093246; } 
-h1 { font-size: 25px; }
-h2 { font-size: 22px; }
-h3 { font-size: 21px; }
-p { color: #284D5D;  font-size: 16px; }
-img { width: 100px; height: 100px; }
-footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 0.8rem; }
-.text-justify { text-align: justify; }
-.title-site, .subtitle-site { text-align: center; }
+/* Altura de Navbar */
+.navbar-expand-lg{min-height: 100px;}
 
 /* NAVBAR LOGO*/
 .navbar-logo {width: 55px; height: 55px; object-fit: contain;}
@@ -23,6 +9,7 @@ footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 
 .navbar-logo-brand { display: flex; align-items: center; gap: 18px;}
 
 /* NAVBAR */
+.navbar{--bs-navbar-padding-y: 0.3rem;}
 .bg-body-tertiary { background-color: #093246 !important; color: #F3EDE1; }
 .nav-item:hover .nav-link {  color: #38b8b4; transition: 0.2s ease-out; }
 .navbar-menu-icon svg  { background-color: #F3EDE1; width: 30px; height: 30px; }
@@ -37,21 +24,20 @@ footer { background-color: #093246; padding: 1rem 0; color: #F3EDE1; font-size: 
 
 @media (min-width: 576px) { 
         .navbar .container-fluid { 
-        padding: 0.5rem; /* O el valor que prefieras para mantener la altura en 56px */
+         /* O el valor que prefieras para mantener la altura en 56px */
     }
 }
 /*Resolucion tablet*/
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-    .navbar .container-fluid { padding: 0.5rem;}
+    .navbar .container-fluid { }
 
 }
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-    
     .navbar-collapse { justify-content: end; }
-    .navbar .container-fluid { padding: 0px 24px; }
+    .navbar .container-fluid {  }
     /*  padding: */
     .dropdown-menu[data-bs-popper] { left: -90px; }
 }
