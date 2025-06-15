@@ -1,18 +1,29 @@
-.card-feed {
-    width: 100%;
-    height: auto;
-    margin-top: 24px;
-    margin-bottom: 32px;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
+.estructura-noticia-completa {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 10px;
+margin: 0%;
 }
 
-.card-body-feed .card-text {
-    height: auto !important;
-    overflow: visible !important;
-    text-overflow: initial !important;
-    white-space: normal !important;
+
+.card-feed {
+    width: 390px;
+    box-sizing: border-box;
+    margin-top: 214px;
+    overflow: hidden;
+    border: 3px solid #093246;
+    margin : 0px;
+
+}
+
+#img-notice-card{
+    height: 358px;
+    width: 333px;
+    left: 24px;
+    position: relative ;
+    border: 3px solid #198683;
+
 }
 
 .btn-group-feed .btn {
@@ -48,6 +59,18 @@
     h3 { font-size: 28px; }
     p { font-size: 20px; }
     .card { max-width: 320px; }
+
+    .card-feed {
+    width: 544px;
+    margin-top: 244px;
+    margin: 20px;
+}
+#img-notice-card{
+    height: 333px;
+    width: 468px;
+    left: 30px;
+}
+
 }
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
@@ -56,6 +79,24 @@
     .btn { width: 100%; max-width: 164px; height: 40px;}
     .navbar-feed .container-fluid { padding: 8px 24px; }
     .dropdown-menu[data-bs-popper] { left: -90px; }
+    .estructura-noticia-completa {
+    justify-content: flex;
+    gap: 0px;
+    }
+    
+    .card-feed {
+    width: 650px;
+    margin-top: 345px;
+    margin: 44px;
+}
+
+
+#img-notice-card{
+    height: 420px;
+    width: 570px;
+}
+
+
 }
 /*Resolucion desktop*/
 /* X-Large devices (large desktops, 1200px and up) */
