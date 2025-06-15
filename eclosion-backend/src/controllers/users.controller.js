@@ -45,6 +45,11 @@ const registerUser = async (req, res) => {
     }
 
     try { 
+        let usuario = await User.findOne({ email });
+        console.log(usuario)
+        if ( usuario ) {
+            return res.status(404).json({ uid : usuario.id, message : "El correo ya ha sido registrado previamente" })
+        }
         await User.create({
             name, lastName, age, email, password, typeUser, statusActive
         })
