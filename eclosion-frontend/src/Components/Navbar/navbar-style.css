@@ -12,7 +12,7 @@
 .navbar{--bs-navbar-padding-y: 0.3rem;}
 .bg-body-tertiary { background-color: #093246 !important; color: #F3EDE1; }
 .nav-item:hover .nav-link {  color: #38b8b4; transition: 0.2s ease-out; }
-.navbar-menu-icon svg  { background-color: #F3EDE1; width: 30px; height: 30px; }
+.navbar-menu-icon svg  { width: 30px; height: 30px; }
 .navbar-user-icon svg { background-color: #F3EDE1; border-radius: 50%; width: 30px; height: 30px; }
 .navbar-brand, .nav-link { color: #F3EDE1; }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show { font-weight: 600; color: #68BDB8; }
