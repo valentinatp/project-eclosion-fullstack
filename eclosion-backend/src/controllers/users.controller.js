@@ -1,7 +1,6 @@
 
 //imporatamos el modelo
 const User = require('../models/user.model')
-const Newspost = require('../models/news.post.model')
 const bcrypt = require('bcryptjs')
 
 //Controlador crear usuario
@@ -87,52 +86,14 @@ const loginUser = async (req, res) => {
 }
 
 
-//Controlador crear nueva noticia
-const createNews = async (req, res) => {
-    //Recibimos los campos del usuario
-    const { author, category, title, bodyNews, dateNews  } = req.body
-    //Validamos que los datos se inyecten correctamente
-    if ( !author || !category || !title || !bodyNews || !dateNews  ) {
-        //Si falta algun parametro se indica el error al cliente
 
-        res.status(400).json({
-            message : "Faltan datos para la creacion del post",
-        })
-        return
-    }
-    try { 
-        //Creamos un nuevo recurso
-
-        await Newspost.create({
-            author, category, title, bodyNews, dateNews
-        })
-        res.status(201).json({
-            //Respondemos la consulta al usuario
-            message: "Post creado correctamente",
-            code : 201,
-
-        })
-    } catch(error) {
-        console.log(error)
-        res.status(500).json({
-            message: "Error al crear un post",
-            error: error.message,
-        })
-    }
-}
 //Controlador consultar usuario por id
 const userId = (req, res) => {
     res.status(201).send("Esta es la ruta de usuario/perfil");
-}
-//Controlador consulta a la BD para actualizar noticias en feed
-const refreshNews = (req, res) => {
-    res.status(200).send("Esta es la ruta para recargar el Feed");
 }
 
 module.exports = {
     registerUser,
     loginUser,
-    userId,
-    createNews,
-    refreshNews,
+    userId
 }
