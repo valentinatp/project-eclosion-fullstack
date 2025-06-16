@@ -1,5 +1,3 @@
-
-
 To use this project locally, install the following NPM dependencies:
 
 ```bash
