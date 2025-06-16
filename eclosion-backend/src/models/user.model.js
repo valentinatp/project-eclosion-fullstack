@@ -26,11 +26,12 @@ const userSchema = new Schema({
     },
     typeUser: {
         type: String,
-        required: true,
+        default: 'user', // Valor por defecto
+        enum: ['user', 'admin', 'moderator'], // Opcional: valores permitidos
     },
     statusActive: {
         type: Boolean,
-        required: true,
+        default: true, // Valor por defecto
     },
 },
     {
