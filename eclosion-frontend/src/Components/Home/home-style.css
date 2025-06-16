@@ -7,6 +7,8 @@
 .container-cards-visibility-tablet { display: none; }
 .container-cards-visibility-desktop { display: none; }
 
+
+
 @media (max-width: 767px) { 
     .container-cards-categories { overflow: hidden; overflow-x: scroll; }
     .container-cards-home.card { padding: 1rem; min-width: 90%; margin-right: 0.5rem; }
@@ -23,6 +25,9 @@
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
+    .padding-text-welcome {
+        padding-top: 20px;
+    }
     .btn { width: 100%; height: 40px; }
     .container-cards-visibility-mobile { display: none;}
     .container-cards-visibility-tablet {display: none;}

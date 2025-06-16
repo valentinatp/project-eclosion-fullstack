@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import noticias from "./notices";
 import NoticeCard from "./Card-feed";
@@ -51,3 +52,4 @@ const Feed = () => {
 };
 
 export default Feed;
+

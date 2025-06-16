@@ -11,7 +11,7 @@ const SearchCategory = () => {
             <section className="container-fluid pb-4">
                 <div className="row">
                     <div className="col">
-                        <h2 className="subtitle-site">¿Qué temas te gustaría investigar hoy?</h2>
+                        <h2 className="subtitle-site text-center">¿Qué temas te gustaría investigar hoy?</h2>
                     </div>
                 </div>
                 <CarouselButtons />
