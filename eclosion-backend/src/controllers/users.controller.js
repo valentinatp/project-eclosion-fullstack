@@ -4,35 +4,6 @@ const User = require('../models/user.model')
 const Newspost = require('../models/news.post.model')
 const bcrypt = require('bcryptjs')
 
-//Controlador login usuario
-const loginUser = async (req, res) => {
-    const { email, password } = req.body
-    //Validamos los datos de los parametros
-    if ( !email || !password ) {
-        res.status(400).json({
-            message : "Faltan datos para iniciar sesion",
-        })
-        return
-    }
-    try { 
-
-        //Creamos un nuevo recurso
-        res.status(200).json({
-            message: "Usuario logeado correctamente",
-            code: 200,
-            data: {
-                email: email,
-                password: password,
-            }
-        })
-    } catch(error) {
-        console.log(error)
-        res.status(500).json({
-            message: "Error al crear un post",
-            error: error.message,
-        })
-    }
-}
 //Controlador crear usuario
 const registerUser = async (req, res) => {
     let { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
@@ -76,6 +47,46 @@ const registerUser = async (req, res) => {
         })
     }
 }
+
+//Controlador login usuario
+const loginUser = async (req, res) => {
+    const { email, password } = req.body
+    //Validamos los datos de los parametros
+    if ( !email || !password ) {
+        res.status(400).json({
+            message : "Faltan datos para iniciar sesion",
+        })
+        return
+    }
+    try { 
+        //Validamos que coincida el usuario 'email'
+        let usuarioEmail = await User.findOne({ email });
+        if ( !usuarioEmail ) {
+            return res.status(404).json({  message : "El usuario no coincide" })
+        }
+        //Desencriptamos la password
+        const validarPsw = bcrypt.compareSync(password, usuarioEmail.password);
+        console.log(usuarioEmail.password)
+        if ( !validarPsw ) {
+            return res.status(400).json({ message: "La constraseña no coincide" })
+        }
+        res.status(200).json({
+            message: "Usuario logeado correctamente",
+            code: 200,
+            data: {
+                email: email,
+            }
+        })
+    } catch(error) {
+        console.log(error)
+        res.status(500).json({
+            message: "Error al iniciar sesion",
+            error: error.message,
+        })
+    }
+}
+
+
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {
     //Recibimos los campos del usuario
