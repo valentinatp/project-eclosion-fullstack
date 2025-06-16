@@ -4,29 +4,36 @@ justify-content: center;
 flex-wrap: wrap;
 gap: 10px;
 margin: 0%;
+padding: 24px 16px;
 }
+
+.responsive-user-text {
+  color: #284D5D;
+  font-size:16px ;
+}
+
 
 
 .card-feed {
-
-    width: 390px;
-
-    box-sizing: border-box;
-    margin-top: 214px;
-    overflow: hidden;
-    border: 3px solid #093246;
-    margin : 0px;
-
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 3px solid #093246;
+  background-color: white;
+  box-sizing: border-box;
 }
 
 
-#img-notice-card{
-    height: 358px;
-    width: 333px;
-    left: 24px;
-    position: relative ;
-    border: 3px solid #198683;
-
+#img-notice-card {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 358 / 333; /* Mantiene la proporción original */
+  display: block;
+  border: 3px solid #198683;
+  object-fit: cover;
+  box-sizing: border-box;
+  padding: 0px; /* Espacio entre borde verde e interior del card */
 
 }
 
@@ -37,6 +44,9 @@ margin: 0%;
 .btn-group-feed .btn {
     width: auto !important;
     margin: 0 !important;
+    justify-content: flex-start;
+    margin-top: auto;
+
 }
 
 .btn-outline-danger.btn-liked,
@@ -57,7 +67,17 @@ margin: 0%;
     h1 { font-size: 32px; }
     h2 { font-size: 28px; }
     h3 { font-size: 24px; }
-    
+
+    .container-fluid { padding: 32px; }
+
+.responsive-user-text {
+  font-size:20px ;
+}
+
+
+
+
+
 }
 /*Resolucion tablet*/
 /* // Medium devices (tablets, 768px and up) */
@@ -74,10 +94,10 @@ margin: 0%;
     margin-top: 244px;
     margin: 20px;
 }
-#img-notice-card{
-    height: 333px;
-    width: 468px;
-    left: 30px;
+
+#img-notice-card {
+  aspect-ratio: 464 / 333; /* Mantiene la proporción original */
+  padding: 0px; /* Espacio entre borde verde e interior del card */
 }
 
 
@@ -100,10 +120,11 @@ margin: 0%;
     margin: 44px;
 }
 
-
-#img-notice-card{
-    height: 420px;
-    width: 570px;
+#img-notice-card {
+ 
+  aspect-ratio: 570 / 420;
+  padding: 0px; 
+ 
 }
 
 
@@ -113,4 +134,10 @@ margin: 0%;
 @media (min-width: 1200px) {  }
 /*Resolucion desktop*/
 /*XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {  }
+@media (min-width: 1400px) {
+
+.card-feed {
+  margin: 16px;
+}
+
+}
