@@ -13,24 +13,26 @@ const NoticeCard = ({ noticia, index, liked, commented, handleLike, handleCommen
      if (!noticia.title || !noticia.img_notice) return null;//prohibe la muestra de la noticia si no tiene todos los valores de la base de datos
 
 return (
-        <div className="card-feed">
+        <div className="card-feed d-flex flex-column">
         {/*Perfil usuario*/}
         <nav className="navbar-feed bg-body-tertiary-perfil">
                                     <div className="container-fluid">
                                         <a className="navbar-brand d-flex align-items-center">
                                             {/*Imagen usuario*/}
                                             <img src={noticia.img_user} alt={noticia.user}style={{ height: 40, width: 40, objectFit: "cover" }}className="d-inline-block align-text-top me-2"/>
-                                            <span style={{ color: "#284D5D" }}>
+                                            <span className="responsive-user-text">
                                                 {noticia.user}
                                             </span>
                                         </a>
                                     </div>
                                 </nav>
+                                
                                 <img
                                     src={noticia.img_notice}
                                     id="img-notice-card"
                                     alt={noticia.title}
                                 />
+
                                 <div className="card-body-feed">
                                     <h5 className="card-title">
                                         {noticia.title}
@@ -44,7 +46,7 @@ return (
                                         </a>
                                     </p>
                                     {/* Botones de interacción */}
-                                    <div className="btn-group-feed">
+                                    <div className="btn-group-feed ">
                                         <button
                                             type="button"
                                             className={`btn btn-outline-success ${liked[index] ? "": ""}`}
