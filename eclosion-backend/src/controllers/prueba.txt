@@ -1,0 +1,115 @@
+
+//imporatamos el modelo
+const User = require('../models/user.model')
+const bcrypt = require('bcryptjs')
+
+//Controlador crear usuario
+const registerUser = async (req, res) => {
+    const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
+
+    //Validamos que los datos se inyecten correctamente
+    if ( !name || !lastName || !age || !email || !password ) {
+        //Si falta algun parametro se indica el error al cliente
+        res.status(400).json({
+            message : "Faltan datos para la creacion del usuario",
+        })
+        return
+    }
+
+    try { 
+        await User.create({
+            name, lastName, age, email, password
+            // typeUser y statusActive se establecerán automáticamente
+
+        })
+        res.status(201).json({
+            //Respondemos la consulta al usuario
+            message: "Usuario registrado correctamente",
+
+            code: 201,
+
+        })
+    } catch(error) {
+        console.log(error)
+        res.status(500).json({
+            message: "Error al registrar el usuario",
+            error: error.message,
+        })
+    }
+}
+
+//Controlador login usuario
+const loginUser = async (req, res) => {
+    const { email, password } = req.body
+
+    // Validamos los datos de los parametros
+    if (!email || !password) {
+        return res.status(400).json({
+            message: "Faltan datos para iniciar sesion",
+        })
+    }
+
+    try { 
+        // Buscar el usuario por email
+        const user = await User.findOne({ email })
+
+        // Verificar si el usuario existe
+        if (!user) {
+            return res.status(401).json({
+                message: "Credenciales inválidas",
+            })
+        }
+
+        // Comparar contraseñas
+        const isMatch = await bcrypt.compare(password, user.password)
+
+        // Verificar si la contraseña es correcta
+        if (!isMatch) {
+            return res.status(401).json({
+                message: "Credenciales inválidas",
+            })
+        }
+
+        // Verificar si el usuario está activo
+        if (!user.statusActive) {
+            return res.status(403).json({
+                message: "Cuenta desactivada",
+            })
+        }
+
+        // Login exitoso
+        res.status(200).json({
+            message: "Usuario logeado correctamente",
+            code: 200,
+            data: {
+                id: user._id,
+                email: user.email,
+                typeUser: user.typeUser
+            }
+        })
+    } catch(error) {
+        console.error(error)
+        res.status(500).json({
+            message: "Error en el proceso de login",
+            error: error.message,
+        })
+    }
+}
+
+
+
+//Controlador consultar usuario por id
+const userId = (req, res) => {
+    res.status(201).send("Esta es la ruta de usuario/perfil");
+}
+
+
+
+
+
+
+module.exports = {
+    registerUser,
+    loginUser,
+    userId,
+}

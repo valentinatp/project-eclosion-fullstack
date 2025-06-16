@@ -1,0 +1,67 @@
+{
+  "noticiasInvestigaciones": [
+    {
+      "id": 1,
+      "autor": "Científicos de la Basura",
+      "categoria": "Evento",
+      "titulo": "Dos eventos de cierre exitosos marcan el año del Programa Científicos de la Basura: Encuentro internacional en Quito y I Congreso Escolar Latinoamericano Virtual",
+      "cuerpo": "Esta noticia informa sobre dos eventos de cierre exitosos que marcaron el año del Programa Científicos de la Basura de la Universidad Católica del Norte de Chile. El primero fue un Encuentro Internacional realizado en Quito, Ecuador, que reunió a investigadores, autoridades y organizaciones de toda la región. El segundo fue el I Congreso Escolar Latinoamericano Virtual, que involucró a estudiantes de varios países. Ambos eventos tuvieron una gran participación y permitieron compartir los resultados de las investigaciones y acciones realizadas durante el año."
+    },
+    {
+      "id": 2,
+      "autor": "Científicos de la Basura",
+      "categoria": "Investigación",
+      "titulo": "Científicos de la Basura visitan seis países de la costa pacífica de Latinoamérica por investigación sobre la contaminación",
+      "cuerpo": "Esta noticia informa sobre la gira que realizaron los Científicos de la Basura de la Universidad Católica del Norte de Chile por seis países de la costa pacífica de Latinoamérica: Perú, Ecuador, Colombia, Panamá, Costa Rica y México. El objetivo fue llevar a cabo investigaciones sobre la contaminación marina y recolectar muestras de basura en las playas de estas regiones. Los resultados de estos estudios serán clave para comprender la magnitud del problema y diseñar estrategias de mitigación a nivel regional."
+    },
+    {
+      "id": 3,
+      "autor": "Científicos de la Basura",
+      "categoria": "Convocatoria",
+      "titulo": "Científicos de la Basura buscan voluntarias(os) para estudiar la contaminación en playas del Pacífico Latinoamericano",
+      "cuerpo": "Esta noticia informa sobre la convocatoria del proyecto Científicos de la Basura de la Universidad Católica del Norte de Chile para reclutar voluntarios que ayuden a estudiar la contaminación en playas del Pacífico Latinoamericano. Los voluntarios recolectarán muestras de basura en las costas de diferentes países de la región, lo que permitirá a los investigadores mapear la distribución y composición de la contaminación marina. Se trata de una oportunidad para que la ciudadanía se involucre directamente en la investigación científica sobre este problema ambiental."
+    },
+    {
+      "id": 4,
+      "autor": "Científicos de la Basura",
+      "categoria": "Investigación",
+      "titulo": "Concluye la investigación 2023: ¡Más de 15.000 botellas plásticas recolectadas en 137 playas y 39 ciudades de Latinoamérica!",
+      "cuerpo": "Esta noticia anuncia la conclusión de la investigación realizada por el proyecto Científicos de la Basura de la Universidad Católica del Norte de Chile durante el año 2023. En total, se recolectaron más de 15.000 botellas plásticas en 137 playas y 39 ciudades de Latinoamérica. Estos datos permitirán a los investigadores analizar el origen y la distribución de la contaminación por plásticos en la región, con el objetivo de diseñar estrategias efectivas para reducir este problema ambiental."
+    },
+    {
+      "id": 5,
+      "autor": "Científicos de la Basura",
+      "categoria": "Investigación",
+      "titulo": "La basura de la playa tiene un origen local: publicados los resultados de la investigación de ciencia ciudadana que abarcó 12.000 km de la costa este del Pacífico",
+      "cuerpo": "Esta noticia presenta los resultados de la investigación de ciencia ciudadana realizada por el proyecto Científicos de la Basura de la Universidad Católica del Norte de Chile. El estudio abarcó 12.000 km de la costa este del Océano Pacífico, en países como Chile, Perú, Ecuador, Colombia y Panamá. Los hallazgos indican que la mayor parte de la basura encontrada en las playas tiene un origen local, lo que demuestra la necesidad de implementar estrategias de gestión de residuos a nivel comunitario para reducir la contaminación marina."
+    },
+    {
+      "id": 6,
+      "autor": "Científicos de la Basura",
+      "categoria": "Convocatoria",
+      "titulo": "Viajeros del Océano busca voluntarios para muestrear playas de todo el mundo",
+      "cuerpo": "Esta noticia informa sobre el programa \"Viajeros del Océano\" del proyecto Científicos de la Basura de la Universidad Católica del Norte de Chile. El programa está buscando voluntarios alrededor del mundo para que recolecten muestras de basura en las playas y envíen los datos al equipo de investigación. El objetivo es mapear la distribución global de la contaminación plástica en las costas, lo que permitirá diseñar estrategias de mitigación a escala internacional."
+    },
+    {
+      "id": 7,
+      "autor": "Científicos de la Basura",
+      "categoria": "Evento",
+      "titulo": "Primer streaming público y gratuito de imágenes submarinas de Chile transmitirá desde Coquimbo",
+      "cuerpo": "Esta noticia anuncia el primer streaming público y gratuito de imágenes submarinas de Chile, organizado por el proyecto Científicos de la Basura de la Universidad Católica del Norte. El evento se transmitirá desde Coquimbo y permitirá a la ciudadanía conocer la biodiversidad marina de la zona. Los organizadores destacan la importancia de acercar la ciencia al público y generar conciencia sobre la conservación de los océanos."
+    },
+    {
+      "id": 8,
+      "autor": "Científicos de la Basura",
+      "categoria": "Investigación",
+      "titulo": "Resultados del Primer Muestreo Internacional de Macrobasura en playas",
+      "cuerpo": "Esta noticia presenta los resultados del Primer Muestreo Internacional de Macrobasura en playas, organizado por el proyecto Científicos de la Basura de la Universidad Católica del Norte de Chile. El estudio involucró a más de 1.000 voluntarios de 30 países que recolectaron y analizaron muestras de basura en playas. Los principales hallazgos indican que el plástico es el material predominante, con una alta presencia de envases y embalajes. Los investigadores destacan la importancia de estos datos para impulsar políticas y acciones concretas de reducción de la contaminación marina."
+    },
+    {
+      "id": 9,
+      "autor": "Científicos de la Basura",
+      "categoria": "Investigación",
+      "titulo": "¿De dónde vienen las botellas plásticas encontradas en las playas del océano Pacífico y en ciudades Latinoamericanas?",
+      "cuerpo": "Esta noticia aborda la pregunta sobre el origen de las botellas plásticas encontradas en las playas del Océano Pacífico y en ciudades de Latinoamérica, a partir de los estudios realizados por el proyecto Científicos de la Basura de la Universidad Católica del Norte de Chile. Los resultados indican que la mayor parte de la basura tiene un origen local, lo que demuestra la necesidad de implementar estrategias de gestión de residuos a nivel comunitario para reducir la contaminación marina."
+    }
+  ]
+}

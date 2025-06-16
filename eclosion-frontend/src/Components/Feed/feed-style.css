@@ -1,15 +1,40 @@
-.card-feed {
-    padding: 24px 16px 16px;
-    width: 100%;
-    height: auto;
-    margin-top: 24px;
-    margin-bottom: 32px;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
+.estructura-noticia-completa {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 10px;
+margin: 0%;
+padding: 24px 16px;
 }
-.user-img{
-    height: 40px; width: 40px; object-fit: cover;
+
+.responsive-user-text {
+  color: #284D5D;
+  font-size:16px ;
+}
+
+
+
+.card-feed {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 3px solid #093246;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+
+#img-notice-card {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 358 / 333; /* Mantiene la proporción original */
+  display: block;
+  border: 3px solid #198683;
+  object-fit: cover;
+  box-sizing: border-box;
+  padding: 0px; /* Espacio entre borde verde e interior del card */
+
 }
 
 
@@ -19,6 +44,9 @@
 .btn-group-feed .btn {
     width: auto !important;
     margin: 0 !important;
+    justify-content: flex-start;
+    margin-top: auto;
+
 }
 
 .btn-outline-danger.btn-liked,
@@ -39,7 +67,17 @@
     h1 { font-size: 32px; }
     h2 { font-size: 28px; }
     h3 { font-size: 24px; }
-    
+
+    .container-fluid { padding: 32px; }
+
+.responsive-user-text {
+  font-size:20px ;
+}
+
+
+
+
+
 }
 /*Resolucion tablet*/
 /* // Medium devices (tablets, 768px and up) */
@@ -49,6 +87,20 @@
     h3 { font-size: 28px; }
     p { font-size: 20px; }
 
+    .card { max-width: 320px; }
+
+    .card-feed {
+    width: 544px;
+    margin-top: 244px;
+    margin: 20px;
+}
+
+#img-notice-card {
+  aspect-ratio: 464 / 333; /* Mantiene la proporción original */
+  padding: 0px; /* Espacio entre borde verde e interior del card */
+}
+
+
 }
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/
@@ -57,10 +109,35 @@
     .btn { width: 100%; max-width: 164px; height: 40px;}
     .navbar-feed .container-fluid { padding: 8px 24px; }
     .dropdown-menu[data-bs-popper] { left: -90px; }
+    .estructura-noticia-completa {
+    justify-content: flex;
+    gap: 0px;
+    }
+    
+    .card-feed {
+    width: 650px;
+    margin-top: 345px;
+    margin: 44px;
+}
+
+#img-notice-card {
+ 
+  aspect-ratio: 570 / 420;
+  padding: 0px; 
+ 
+}
+
+
 }
 /*Resolucion desktop*/
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  }
 /*Resolucion desktop*/
 /*XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {  }
+@media (min-width: 1400px) {
+
+.card-feed {
+  margin: 16px;
+}
+
+}

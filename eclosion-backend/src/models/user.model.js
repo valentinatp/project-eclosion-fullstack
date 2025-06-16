@@ -2,11 +2,7 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 //Creamos el Schema del modelo
 const userSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-        unique: true,
-    },
+
     name: {
         type: String,
         required: true,
@@ -30,13 +26,24 @@ const userSchema = new Schema({
     },
     typeUser: {
         type: String,
-        required: true,
+        default: 'user', // Valor por defecto
+        enum: ['user', 'admin', 'moderator'], // Opcional: valores permitidos
     },
     statusActive: {
         type: Boolean,
-        required: true,
+        default: true, // Valor por defecto
     },
-}) 
+},
+    {
+        virtuals: {
+            fullName: {
+                get() {
+                    return `${this.name} ${this.lastName}`
+                }
+            }
+        }
+    }
+) 
 
 //Creamos la instancia del modelo indicandole la coleccion y su Schema como parametro
 const User = model("User", userSchema);//El nombre de la coleccion se escribe en singular y con la primera letra en mayuscula ('collection: users' -> 'User').
