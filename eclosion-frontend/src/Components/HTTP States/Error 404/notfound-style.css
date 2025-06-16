@@ -1,0 +1,81 @@
+.notfound-wrapper {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.video-bg.video-visible {
+    opacity: 1;
+}
+
+.notfound-container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Animación fade-in */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notfound-title {
+    font-size: 150px;
+    color: #0c0639;
+    text-shadow: 2px 2px 8px #b2e9fd;
+}
+.notfound-title:hover {transition: 0.7s ease-in-out; transform: scale3d(1.1, 1.1, 1.1);
+}
+
+
+.notfound-message {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #0c0639;
+    text-shadow: 2px 2px 8px #b2e9fd;
+}
+
+.notfound-button {
+    text-decoration: none;
+    background-color: #198683;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.notfound-link:hover {
+    background-color: #042637;
+}
