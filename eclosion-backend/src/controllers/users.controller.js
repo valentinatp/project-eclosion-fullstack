@@ -1,11 +1,11 @@
 
 //imporatamos el modelo
 const User = require('../models/user.model')
-
 const Newspost = require('../models/news.post.model')
+const bcrypt = require('bcryptjs')
 
 //Controlador login usuario
-const loginUser = (req, res) => {
+const loginUser = async (req, res) => {
     const { email, password } = req.body
     //Validamos los datos de los parametros
     if ( !email || !password ) {
@@ -15,6 +15,7 @@ const loginUser = (req, res) => {
         return
     }
     try { 
+
         //Creamos un nuevo recurso
         res.status(200).json({
             message: "Usuario logeado correctamente",
@@ -32,12 +33,10 @@ const loginUser = (req, res) => {
         })
     }
 }
-
 //Controlador crear usuario
 const registerUser = async (req, res) => {
-    const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
-
-
+    let { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
+    
     //Validamos que los datos se inyecten correctamente
     if ( !name || !lastName || !age || !email || !password || !typeUser || !statusActive) {
         //Si falta algun parametro se indica el error al cliente
@@ -47,8 +46,18 @@ const registerUser = async (req, res) => {
         return
     }
 
-
     try { 
+        let usuario = await User.findOne({ email });
+        console.log(usuario)
+
+        if ( usuario ) {
+            return res.status(404).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
+        }
+
+        //Encriptamos la contraseña
+        const salt = bcrypt.genSaltSync();
+        password = bcrypt.hashSync(password, salt)
+
         await User.create({
             name, lastName, age, email, password, typeUser, statusActive
 
@@ -56,7 +65,6 @@ const registerUser = async (req, res) => {
         res.status(201).json({
             //Respondemos la consulta al usuario
             message: "Usuario registrado correctamente",
-
             code: 201,
 
         })
@@ -68,8 +76,6 @@ const registerUser = async (req, res) => {
         })
     }
 }
-
-
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {
     //Recibimos los campos del usuario
@@ -103,15 +109,10 @@ const createNews = async (req, res) => {
         })
     }
 }
-
 //Controlador consultar usuario por id
 const userId = (req, res) => {
     res.status(201).send("Esta es la ruta de usuario/perfil");
 }
-
-
-
-
 //Controlador consulta a la BD para actualizar noticias en feed
 const refreshNews = (req, res) => {
     res.status(200).send("Esta es la ruta para recargar el Feed");
