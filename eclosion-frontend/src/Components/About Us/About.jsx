@@ -1,7 +1,7 @@
 import './about-style.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import reactLogo from '../../../public/Eclosion-Logo.png';
+import reactLogo from '/Eclosion-Logo.png';
 import imageOne from '../../assets/Pictures/estebanm-eclosion.png'
 import imageTwo from '../../assets/Pictures/valet-eclosion.png'
 import imageThree from '../../assets/Pictures/triniv-eclosion.png'
@@ -35,13 +35,13 @@ function About() {
 
     return(
     
-    <div id="container-about-us" className="container about-gradient">
+    <div id="container-about-us" className="main-container">
       {/* Introducción */}
-      <div className="row text-center mb-4 about-intro fade-in">
-        <div className="col-12 fade-in">
+      <div className="row text-center about-intro intro-bg">
+        <div className="col-12 about-intro-1 fade-in">
           <h1 className="sobre-nosotros">Sobre Nosotros</h1>
         </div>
-        <div className="col-12 fade-in">
+        <div className="col-12 about-intro-2 fade-in">
           <p className="about-main-text">
             ¡Te invitamos a conocer más sobre nuestro proyecto Eclosión!
           </p>
@@ -49,16 +49,16 @@ function About() {
       </div>
 
       {/* ¿Quiénes somos? */}
-      <div className="row align-items-center about-intro-wrapper fade-in">
+      <div className="row align-items-center quienes-somos-wrapper qs-bg fade-in">
         <div className="col-md-6 text-center">
           <h2 className="quienes-somos">¿Quiénes somos?</h2>
         </div>
-        <div className="col-md-6 text-center">
+        <div className="col-md-6 logo-container text-center">
           <img className="about-logo img-fluid" src={reactLogo} alt="React Logo" />
         </div>
       </div>
 
-      <div className="row justify-content-center mt-3 fade-in">
+      <div className="row quienes-text justify-content-center mt-3 fade-in">
         <div className="col-md-10">
           <p className="parrafo-about">
             Eclosión es el proyecto final que desarrollamos un grupo de estudiantes como equipo durante
@@ -75,10 +75,12 @@ function About() {
       </div>
 
       {/* Nuestra Meta */}
-      <div className="row fade-in">
-        <div className="col-12">
-          <h2 className="about-title our-goal">Nuestra Meta</h2>
+      <div className="row our-goal-container fade-in">
+        <div className="col-12 goal-title-container">
+          <h2 className="our-goal-title">Nuestra Meta</h2>
         </div>
+      </div>
+      <div className="row our-goal-content fade-in">
         <div className="col-md-10 offset-md-1">
           <p className="parrafo-about grad-1">
             ¿Sabías que el 70% de Chile es mar? Es el mismo porcentaje de oxígeno que aportan los océanos a nuestro planeta.
@@ -97,10 +99,10 @@ function About() {
             y el compromiso como herramientas para generar un impacto real.
           </p>
         </div>
-      </div>
+      </div>  
 
       {/* Nuestro Equipo */}
-      <div className="row fade-in">
+      <div className="row our-team-container fade-in">
         <div className="col-12">
           <h2 className="about-title our-team">Nuestro Equipo</h2>
           <div className="row justify-content-center picture-members fade-in">

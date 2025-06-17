@@ -4,7 +4,7 @@
 const User = require('../models/user.model')
 const bcrypt = require('bcryptjs')
 const jsonWebToken = require('jsonwebtoken')
-
+ 
 //Controlador crear usuario
 const registerUser = async (req, res) => {
     const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
 
         if ( userEmail ) {
             //se cambia 404 a 409 porque en este caso es un Conflict y no un error
-            return res.status(409).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
+            return res.status(409).json({ uid : userEmail.id, name: userEmail.fullName, message : "El correo ya ha sido registrado previamente" })
         }
 
         //Capturamos password

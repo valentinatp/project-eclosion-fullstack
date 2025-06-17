@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import ModalLogin from '../Forms/ModalLogin/ModalLogin.jsx';
-import logo from '../../../public/Eclosion-Logo.png'
+
+import logo from '/Eclosion-Logo.png';
 
 // import { animate } from 'animejs';
 
