@@ -26,7 +26,7 @@ const ModalLogin = ({ closeModal }) => {
                             </div>
                             {/* Botones para cancelar o iniciar sesión */}
                             <div className="d-flex gap-5">
-                                <button type="button" className="btn btn-success fw-bold btn-extra" onClick={closeModal}>Cancelar</button>
+                                <button type="button" className="btn btn-return fw-bold btn-extra btn-disguise" onClick={closeModal}>Cancelar</button>
                                 <button type="submit" className="btn btn-secondary fw-bold">Iniciar sesión</button>
                             </div>
                             <p className="mt-4 text-center register-link">¿No tienes una cuenta? <Link to="/register">Registrate.</Link></p>

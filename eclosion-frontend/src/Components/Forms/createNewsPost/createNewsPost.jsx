@@ -17,14 +17,13 @@ const FormCrearNoticias = () => {
         setTitulo('');
         setContenido('');
         setCategoria('');
-        setImagen('');
+        setEnlace('');
     };
 
     return (
         <>
             <div className="container-fluid breaking-news">
                 <div className="news-item">
-                    <Link to="/feed" className="boton-regresar"></Link>
                     <h1 className="fw-bold mb-2">Nueva Noticia</h1>
                     <p className="mb-4"><strong>Publica</strong> tu noticia ingresando los siguientes datos</p>
                     <form onSubmit={createNewsPost}>
@@ -75,7 +74,7 @@ const FormCrearNoticias = () => {
                             />
                         </div>
                         <div className="d-flex justify-content-between">
-                            <Link to="/feed" className="btn boton-volver">Volver</Link>
+                            <Link to="/feed" className="btn btn-return fw-bold">Volver</Link>
                             <button type="submit" className="btn btn-secondary fw-bold">Publicar</button>
                         </div>
                     </form>

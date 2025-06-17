@@ -1,5 +1,5 @@
 .boton-regresar { font-size: 35px; color: #093246; }
-.btn-success .boton-volver{width: 50%;font-weight: 500; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
+.btn-return .boton-volver{width: 50%;font-weight: 500; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
 
 .news-item .btn:hover, .news-item .btn:focus { background-color: #146c6a; color: #F3EDE1; }
 
@@ -17,17 +17,8 @@
 
 .border-secondary {border: 3px solid #68BDB8 !important; }
 
-.btn-success{
-    width: 100%;
-    border-radius: 16px;
-    background-color: #F3EDE1;
-    border-width: 3px;
-    border-color: #198683;
-    color: #198683;
-    height: 80px;
-  }
 
-.btn-extra {display: none;}
+
 
 
 
@@ -60,11 +51,12 @@
     .boton-regresar {display: none;}
     form .d-flex{ justify-content: center; }
 
-    .news-item .btn-extra {
-      
-    display: block; /* Hace visible el botón */
+    .news-item .btn-return {
     border-radius: 16px;
-    font-size: 26px; min-height: 80px; min-width: 300px;line-height: 2.5;
+    font-size: 26px; 
+    min-height: 80px; 
+    min-width: 300px;
+    line-height: 2.5;
   }
    
 }

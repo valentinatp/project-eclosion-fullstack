@@ -8,7 +8,9 @@
 /*Resolucion tablet*/
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-
+.container-cards-categories .card {
+        max-width: 320px;
+    }
 }
 /*Resolucion desktop*/
 /* Large devices (desktops, 992px and up)*/

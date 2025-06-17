@@ -74,7 +74,7 @@
   .modal-content .text-center {font-size: 24px;}
   form .d-flex{ justify-content: center; }
   .modal-content .btn-secondary{font-size: 26px; min-height: 80px; min-width: 300px; width: auto; margin: auto 0 auto 0; }
-    .modal-content .btn-extra {
+    .modal-content .btn-disguise {
     display: block; /* Hace visible el botón */
     border-radius: 16px;
     font-size: 26px; min-height: 80px; min-width: 300px;

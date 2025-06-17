@@ -15,7 +15,9 @@
 
 /*Resolucion Tablet*/
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+        .container-cards .card {
+        max-width: 320px;}
 
 }
 /*Resolucion desktop*/
