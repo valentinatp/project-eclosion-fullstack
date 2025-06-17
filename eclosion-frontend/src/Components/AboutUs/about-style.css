@@ -4,6 +4,14 @@
     
 }
 
+#container-about-us .row{
+ 
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+
+
 /*body:has(#container-about-us) {
     background: linear-gradient(to bottom, #90d3ef, #01051d);
     background-repeat: no-repeat;
