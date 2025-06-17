@@ -1,8 +1,5 @@
 const Newspost = require('../models/news.post.model')
 
-
-
-
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {
     //Recibimos los campos del usuario
@@ -17,8 +14,6 @@ const createNews = async (req, res) => {
         return
     }
     try { 
-        //Creamos un nuevo recurso
-
         await Newspost.create({
             author, category, title, bodyNews, dateNews
         })
@@ -26,7 +21,6 @@ const createNews = async (req, res) => {
             //Respondemos la consulta al usuario
             message: "Post creado correctamente",
             code : 201,
-
         })
     } catch(error) {
         console.log(error)
@@ -43,9 +37,6 @@ const createNews = async (req, res) => {
 const refreshNews = (req, res) => {
     res.status(200).send("Esta es la ruta para recargar el Feed");
 }
-
-
-
 
 module.exports = {
     createNews,

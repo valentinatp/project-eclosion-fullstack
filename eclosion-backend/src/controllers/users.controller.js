@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 
 //Controlador crear usuario
 const registerUser = async (req, res) => {
-    let { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
+    const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
     
     //Validamos que los datos se inyecten correctamente
     if ( !name || !lastName || !age || !email || !password || !typeUser || !statusActive) {
@@ -17,13 +17,15 @@ const registerUser = async (req, res) => {
     }
 
     try { 
-        let usuario = await User.findOne({ email });
-        console.log(usuario)
+        let userEmail = await User.findOne({ email });
+        console.log(userEmail)
 
-        if ( usuario ) {
+        if ( userEmail ) {
             return res.status(404).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
         }
 
+        //Capturamos password
+        let { password } = req.body
         //Encriptamos la contraseña
         const salt = bcrypt.genSaltSync();
         password = bcrypt.hashSync(password, salt)
@@ -59,14 +61,14 @@ const loginUser = async (req, res) => {
     }
     try { 
         //Validamos que coincida el usuario 'email'
-        let usuarioEmail = await User.findOne({ email });
-        if ( !usuarioEmail ) {
+        let userEmail = await User.findOne({ email });
+        if ( !userEmail ) {
             return res.status(404).json({  message : "El usuario no coincide" })
         }
         //Desencriptamos la password
-        const validarPsw = bcrypt.compareSync(password, usuarioEmail.password);
-        console.log(usuarioEmail.password)
-        if ( !validarPsw ) {
+        const validatePassword = bcrypt.compareSync(password, userEmail.password);
+        console.log(userEmail.password)
+        if ( !validatePassword ) {
             return res.status(400).json({ message: "La constraseña no coincide" })
         }
         res.status(200).json({
@@ -84,8 +86,6 @@ const loginUser = async (req, res) => {
         })
     }
 }
-
-
 
 //Controlador consultar usuario por id
 const userId = (req, res) => {
