@@ -1,4 +1,4 @@
-const Newspost = require('../models/news.post.model')
+const Newspost = require('../models/news.post.model') 
 
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {

@@ -3,7 +3,7 @@
 const User = require('../models/user.model')
 const bcrypt = require('bcryptjs')
 const jsonWebToken = require('jsonwebtoken')
-
+ 
 //Controlador crear usuario
 const registerUser = async (req, res) => {
     const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
