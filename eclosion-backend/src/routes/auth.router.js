@@ -17,7 +17,7 @@ router.post('/login', loginUser )
 router.post('/register', registerUser )
 
 //router del feed y crear post
-
+router.get('/feed', refreshNews )
 // router.post('/createNewsPost', createNews )
 
 
