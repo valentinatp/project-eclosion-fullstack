@@ -13,14 +13,14 @@ const NoticeCard = ({ noticia, index, liked, commented, handleLike, handleCommen
     <div className="card-feed d-flex flex-column">
 
       {/* Perfil usuario */}
-      <nav className="navbar-feed bg-body-tertiary-perfil">
-        <div className="container-fluid">
+      <div className="navbar-feed bg-body-tertiary-perfil">
+        <div className="feed-container">
           <a className="navbar-brand d-flex align-items-center">
-            <img src={noticia.img_user} alt={noticia.user} style={{ height: 40, width: 40, objectFit: "cover" }} className="d-inline-block align-text-top me-2" />
+            <img src={noticia.img_user} alt={noticia.user} className="d-inline-block align-text-top me-2 img-perfile-feed" />
             <span className="responsive-user-text">{noticia.user}</span>
           </a>
         </div>
-      </nav>
+      </div>
 
       {/* Imagen noticia */}
       <img src={noticia.img_notice} id="img-notice-card" alt={noticia.title} />
@@ -31,7 +31,9 @@ const NoticeCard = ({ noticia, index, liked, commented, handleLike, handleCommen
           <p className='category'>{noticia.category}</p>
         </div>
 
-        <h5 id='title-card-feed'>{noticia.title}</h5>
+        
+
+        <h5 id='feed-card-notice'>{noticia.title}</h5>
 
         <p className="card-text">
           {noticia.resume_notice}{" "}
