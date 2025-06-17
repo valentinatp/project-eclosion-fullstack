@@ -1,5 +1,5 @@
 const { registerUser, loginUser, userId } = require('../controllers/users.controller')
-const { createNews, refreshNews } = require('../controllers/feed.controller')
+const { createNews, refreshNews } = require('../controllers/newsPosts.controller')
 const { Router } = require('express')
 const router = Router();
 
