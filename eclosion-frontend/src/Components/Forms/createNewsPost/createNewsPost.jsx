@@ -1,68 +1,88 @@
-
-
-
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const FormCrearNoticias = ({ onSubmit }) => {
+
+const FormCrearNoticias = () => {
     const [titulo, setTitulo] = useState('');
     const [contenido, setContenido] = useState('');
-    const [autor, setAutor] = useState('');
-    const [imagen, setImagen] = useState('');
+    const [Categoria, setCategoria] = useState('');
+    const [enlace, setEnlace] = useState('');
 
     const createNewsPost = (e) => {
         e.preventDefault();
-        // validaciones 
-        onSubmit({
-            titulo,
-            contenido,
-            autor,
-            imagen,
-        });
+        // Aquí puedes manejar el envío del formulario, por ejemplo, enviar los datos a una API
+        // console.log({ titulo, contenido, autor, imagen });
 
+        // Limpiar los campos
         setTitulo('');
         setContenido('');
-        setAutor('');
+        setCategoria('');
         setImagen('');
     };
 
     return (
-        <form onSubmit = {createNewsPost}>
-        <div>
-        <label>Título:</label>
-        <input
-          type="text"
-          value={titulo}
-          onChange={(e) => setTitulo(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Contenido:</label>
-        <textarea
-          value={contenido}
-          onChange={(e) => setContenido(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Autor:</label>
-        <input
-          type="text"
-          value={autor}
-          onChange={(e) => setAutor(e.target.value)}
-          required/>
-      </div>
-      <div>
-        <label>Imagen: (URL)</label>
-        <input
-          type="text"
-          value={imagen}
-          onChange={(e) => setImagen(e.target.value)}
-        />
-      </div>
-      <button type="submit">Crear Noticia</button>
-    </form >
-    )
+        <>
+            <div className="container-fluid register-dialog">
+                <div className="register-content">
+                    <Link to="/feed" className="boton-regresar"></Link>
+                    <h1 className="fw-bold mb-2">Nueva Noticia</h1>
+                    <p className="mb-4"><strong>Publica</strong> tu noticia ingresando los siguientes datos</p>
+                    <form onSubmit={createNewsPost}>
+                        <div className="mb-3">
+                            <label htmlFor="titulo" className="fw-bold">Título</label>
+                            <input
+                                type="text"
+                                className="form-control border border-secondary"
+                                id="titulo"
+                                placeholder="Título de la noticia"
+                                required
+                                value={titulo}
+                                onChange={(e) => setTitulo(e.target.value)}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="contenido" className="fw-bold">Contenido</label>
+                            <textarea
+                                className="form-control border border-secondary"
+                                id="contenido"
+                                placeholder="Contenido de la noticia"
+                                required
+                                value={contenido}
+                                onChange={(e) => setContenido(e.target.value)}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="categoria" className="fw-bold">Categoria</label>
+                            <input
+                                type="text"
+                                className="form-control border border-secondary"
+                                id="categoria"
+                                placeholder="Playas - Oceanos - Rios - Lagos"
+                                required
+                                value={Categoria}
+                                onChange={(e) => setCategoria(e.target.value)}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="imagen" className="fw-bold">URL de la noticia</label>
+                            <input
+                                type="text"
+                                className="form-control border border-secondary"
+                                id="imagen"
+                                placeholder="URL de la noticia"
+                                value={enlace}
+                                onChange={(e) => setEnlace(e.target.value)}
+                            />
+                        </div>
+                        <div className="d-flex justify-content-between">
+                            <Link to="/feed" className="btn btn-success boton-volver fw-bold btn-extra">Volver</Link>
+                            <button type="submit" className="btn btn-secondary fw-bold">Publicar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </>
+    );
+};
 
-}
 export default FormCrearNoticias;
