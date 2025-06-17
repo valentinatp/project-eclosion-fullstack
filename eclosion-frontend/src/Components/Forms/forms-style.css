@@ -2,7 +2,10 @@
 
 .border-secondary {border: 3px solid #68BDB8 !important; }
 
-.btn-success{
+
+
+/* btn-success => btn-return */
+.btn-return{
     width: 100%;
     border-radius: 16px;
     background-color: #F3EDE1;
@@ -11,5 +14,9 @@
     color: #198683;
     height: 80px;
   }
+/* btn-extra => btn-disguise */
 
-.btn-extra {display: none;}
+.btn-disguise {display: none;}
+
+
+

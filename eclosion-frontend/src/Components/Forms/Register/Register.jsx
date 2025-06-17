@@ -141,7 +141,7 @@ const Register = () => {
 
             <div className="d-flex gap-5">
               
-              <Link to="/" className="btn btn-success boton-volver fw-bold btn-extra">Volver</Link>
+              <Link to="/" className="btn btn-return fw-bold btn-disguise">Volver</Link>
               <button type="submit" className="btn btn-secondary fw-bold">Registrar</button>
             </div>
             {error && (

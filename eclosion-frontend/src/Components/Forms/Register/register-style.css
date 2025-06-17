@@ -1,5 +1,5 @@
 .boton-regresar { font-size: 35px; color: #093246; }
-.btn-success .boton-volver{width: 50%;font-weight: 500; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
+.btn-return .boton-volver{width: 50%;font-weight: 500; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
 
 .register-content .btn:hover, .register-content .btn:focus { background-color: #146c6a; color: #F3EDE1; }
 
@@ -67,7 +67,7 @@
     .boton-regresar {display: none;}
     form .d-flex{ justify-content: center; }
 
-    .register-content .btn-extra {
+    .register-content .btn-disguise {
       
     display: block; /* Hace visible el botón */
     border-radius: 16px;
