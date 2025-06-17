@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
 
         if ( userEmail ) {
             //se cambia 404 a 409 porque en este caso es un Conflict y no un error
-            return res.status(409).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
+            return res.status(409).json({ uid : userEmail.id, name: userEmail.fullName, message : "El correo ya ha sido registrado previamente" })
         }
 
         //Capturamos password
