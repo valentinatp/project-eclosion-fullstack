@@ -9,6 +9,7 @@
 @import url(./Components/Home/home-style.css);
 @import url(./Components/Home/SearchCategory/CarouselButtons/carousel-buttons-style.css);
 @import url(./Components/MyPerson/myperfile.css);
+@import url(./Components/AboutUs/about-style.css);
 
 
 /* ESTILOS GENERALES - NO MODIFICAR */
@@ -141,7 +142,7 @@ img {
         font-size: 20px;
     }
 
-    .container-cards .card {
+    /*.container-cards .card {
         max-width: 320px;
     }
     .container-cards-categories .card {
@@ -151,7 +152,7 @@ img {
     .title-site,
     .subtitle-site {
         text-align: left;
-    }
+    }*/
 }
 
 /*Resolucion desktop*/
