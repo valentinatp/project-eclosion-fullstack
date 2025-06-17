@@ -1,5 +1,6 @@
 
 //imporatamos el modelo
+
 const User = require('../models/user.model')
 const bcrypt = require('bcryptjs')
 const jsonWebToken = require('jsonwebtoken')
@@ -22,7 +23,8 @@ const registerUser = async (req, res) => {
         console.log(userEmail)
 
         if ( userEmail ) {
-            return res.status(404).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
+            //se cambia 404 a 409 porque en este caso es un Conflict y no un error
+            return res.status(409).json({ uid : usuario.id, name: usuario.fullName, message : "El correo ya ha sido registrado previamente" })
         }
 
         //Capturamos password
@@ -94,13 +96,113 @@ const loginUser = async (req, res) => {
     }
 }
 
+//nueva implementacion de consulta
+
+// Controlador para obtener todos los usuarios
+const getAllUsers = async (_, res) => {
+
+    try {
+        
+        const users = await User.find();
+        
+        res.status(200).json({
+            message: "Usuarios obtenidos correctamente",
+            data: users,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: "Error al obtener los usuarios",
+            error: error.message,
+        });
+    }
+};
+
+// Controlador para obtener un usuario por ID
+const getUserById = async (req, res) => {
+    const { id } = req.params; // Capturamos el ID desde los parámetros de la ruta
+    try {
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+        res.status(200).json({
+            message: "Usuario obtenido correctamente",
+            data: user,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: "Error al obtener el usuario",
+            error: error.message,
+        });
+    }
+};
+
+// Controlador para actualizar un usuario
+const updateUser = async (req, res) => {
+    const { id } = req.params; // Capturamos el ID desde los parámetros de la ruta
+    const { name, lastName, age, email, typeUser, statusActive } = req.body;
+
+    try {
+        const updatedUser = await User.findByIdAndUpdate(id, {
+            name,
+            lastName,
+            age,
+            email,
+            typeUser,
+            statusActive,
+        }, { new: true }); // { new: true } devuelve el documento actualizado
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+
+        res.status(200).json({
+            message: "Usuario actualizado correctamente",
+            data: updatedUser,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: "Error al actualizar el usuario",
+            error: error.message,
+        });
+    }
+};
+
+// Controlador para eliminar un usuario
+const deleteUser = async (req, res) => {
+    const { id } = req.params; // Capturamos el ID desde los parámetros de la ruta
+    try {
+        const deletedUser = await User.findByIdAndDelete(id);
+        if (!deletedUser) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+        res.status(200).json({
+            message: "Usuario eliminado correctamente",
+            data: deletedUser,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: "Error al eliminar el usuario",
+            error: error.message,
+        });
+    }
+};
+
 //Controlador consultar usuario por id
 const userId = (req, res) => {
     res.status(201).send("Esta es la ruta de usuario/perfil");
 }
 
 module.exports = {
+    userId,
     registerUser,
     loginUser,
-    userId
-}
+    getAllUsers,
+    getUserById,
+    updateUser,
+    deleteUser,
+};
