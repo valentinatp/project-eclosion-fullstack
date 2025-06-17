@@ -1,13 +1,23 @@
-
-import React, { useState } from "react";
-import noticias from "./notices";
+import React, { useEffect, useState } from "react";
 import NoticeCard from "./Card-feed";
 
 const Feed = () => {
-  const [liked, setLiked] = useState(Array(noticias.length).fill(false));
-  const [commented, setCommented] = useState(Array(noticias.length).fill(false));
+  const [noticias, setNoticias] = useState([]);
+  const [liked, setLiked] = useState([]);
+  const [commented, setCommented] = useState([]);
   const [show, setShow] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:4001/api/news")
+      .then((res) => res.json())
+      .then((data) => {
+        setNoticias(data);
+        setLiked(new Array(data.length).fill(false));
+        setCommented(new Array(data.length).fill(false));
+      })
+      .catch((err) => console.error("Error al cargar noticias:", err));
+  }, []);
 
   const handleLike = (index) => {
     const updated = [...liked];
@@ -34,7 +44,7 @@ const Feed = () => {
       <div className="estructura-noticia-completa">
         {noticias.map((noticia, index) => (
           <NoticeCard
-            key={noticia.id}
+            key={index}
             noticia={noticia}
             index={index}
             liked={liked}
