@@ -1,7 +1,17 @@
+
 #container-about-us {
     margin-top: 50px;
     padding: 10px;
+    position: relative;
+    z-index: 1;
 }
+
+body:has(#container-about-us) {
+    background: linear-gradient(to bottom, #90d3ef, #01051d);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 /* Título Sobre Nosotros */
 .sobre-nosotros {
@@ -15,9 +25,11 @@
     font-weight: 500;
     text-align: center;
 }
+
 .about-intro-wrapper {
     margin-bottom: 30px;
 }
+
 /* Quiénes somos */
 .quienes-somos {
     font-weight: 650;
@@ -43,16 +55,51 @@
     margin-bottom: 30px;
 }
 
+.our-goal {
+    color: #1b5c7a;
+}
+
+.grad-1 {
+    color: #30a5dc;
+}
+
+.grad-2 {
+    color: #41b3e8;
+}
+
+.grad-3 {
+    color: #65c4f0;
+}
+
+.our-team {
+    color: #9dd9f5;
+}
+
 /*Imágenes Equipo*/
 .members {
     height: 200px;
     width: 200px;
     margin-bottom: 30px;
-    
+
 }
+
 .member-name {
     font-weight: 550;
+    color: #e1edf3;
 }
+
+/*Animación Fade In*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 /*Resolución Mobile*/
@@ -62,11 +109,12 @@
         width: 170px;
         height: 170px;
     }
+
     .members {
-    height: 220px;
-    width: 220px;
-    
-    
+        height: 220px;
+        width: 220px;
+
+
     }
 }
 
@@ -78,22 +126,37 @@
         width: 200px;
         height: 200px;
     }
+
     .members {
-    height: 250px;
-    width: 250px;
-    
+        height: 250px;
+        width: 250px;
+
     }
 }
+
 /*Resolución Desktop*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+    .sobre-nosotros {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
     .about-logo {
         width: 230px;
         height: 230px;
     }
+
     .members {
-    height: 230px;
-    width: 230px;
+        height: 230px;
+        width: 230px;
     }
 }
 
