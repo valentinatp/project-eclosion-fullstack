@@ -21,7 +21,14 @@ const newsSchema = new Schema({
     dateNews: {
         type: String,
         required: true,
-    }
+    },
+    imageUser: String,
+    imageNews: String,
+    linkNews: {
+        type: String,
+        required: true,
+    },
+    
 })
 
 //Creamos la instancia del modelo indicandole la coleccion y su Schema como parametro

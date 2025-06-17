@@ -1,14 +1,10 @@
 
 const { registerUser, loginUser, userId } = require('../controllers/users.controller')
-
-
-const { createNews, refreshNews } = require('../controllers/newsPost.controller')
+const { createNews, refreshNews } = require('../controllers/newsPosts.controller')
 const { Router } = require('express')
 const router = Router();
 
 //router de usuarios 
-
-
 router.get('/user', userId )
 router.post('/login', loginUser )
 router.post('/register', registerUser )

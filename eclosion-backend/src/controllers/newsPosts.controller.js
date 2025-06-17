@@ -3,10 +3,10 @@ const Newspost = require('../models/news.post.model')
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {
     //Recibimos los campos del usuario
-    const { author, category, title, bodyNews, dateNews  } = req.body
+    const { author, category, title, bodyNews, dateNews, imageUser, imageNews, linkNews } = req.body
     //Validamos que los datos se inyecten correctamente
-    if ( !author || !category || !title || !bodyNews || !dateNews  ) {
-        //Si falta algun parametro se indica el error al cliente
+    if ( !author || !category || !title || !bodyNews || !dateNews || !linkNews ) {
+        //Si falta algun parametro requerido se indica el error al cliente
 
         res.status(400).json({
             message : "Faltan datos para la creacion del post",
@@ -15,7 +15,7 @@ const createNews = async (req, res) => {
     }
     try { 
         await Newspost.create({
-            author, category, title, bodyNews, dateNews
+            author, category, title, bodyNews, dateNews, imageUser, imageNews, linkNews
         })
         res.status(201).json({
             //Respondemos la consulta al usuario
