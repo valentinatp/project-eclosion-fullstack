@@ -22,8 +22,8 @@ const FormCrearNoticias = () => {
 
     return (
         <>
-            <div className="container-fluid register-dialog">
-                <div className="register-content">
+            <div className="container-fluid breaking-news">
+                <div className="news-item">
                     <Link to="/feed" className="boton-regresar"></Link>
                     <h1 className="fw-bold mb-2">Nueva Noticia</h1>
                     <p className="mb-4"><strong>Publica</strong> tu noticia ingresando los siguientes datos</p>
@@ -64,18 +64,18 @@ const FormCrearNoticias = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="imagen" className="fw-bold">URL de la noticia</label>
+                            <label htmlFor="enlace" className="fw-bold">URL de la noticia</label>
                             <input
                                 type="text"
                                 className="form-control border border-secondary"
-                                id="imagen"
+                                id="enlace"
                                 placeholder="URL de la noticia"
                                 value={enlace}
                                 onChange={(e) => setEnlace(e.target.value)}
                             />
                         </div>
                         <div className="d-flex justify-content-between">
-                            <Link to="/feed" className="btn btn-success boton-volver fw-bold btn-extra">Volver</Link>
+                            <Link to="/feed" className="btn boton-volver">Volver</Link>
                             <button type="submit" className="btn btn-secondary fw-bold">Publicar</button>
                         </div>
                     </form>

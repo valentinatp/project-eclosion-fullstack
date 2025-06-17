@@ -1,0 +1,70 @@
+.boton-regresar { font-size: 35px; color: #093246; }
+.btn-success .boton-volver{width: 50%;font-weight: 500; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
+
+.news-item .btn:hover, .news-item .btn:focus { background-color: #146c6a; color: #F3EDE1; }
+
+              /*register-dialog = breaking-news
+              register-content = news-item*/
+
+.breaking-news .news-item{ padding:40px 24.5px 45px 24.5px; }
+.news-item h1{font-size: 32px;}
+.news-item p{font-size: 16px;}
+.news-item label{font-size: 18px; color: #093246 ;}
+.news-item .form-control{min-width: 240px; min-height: 62px; width: 100%;}
+.news-item .btn-secondary{font-size: 18px; min-height: 62px; min-width: 240px; width: 100%; border-radius: 16px; font-weight: 700;}
+.news-item .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
+
+
+.border-secondary {border: 3px solid #68BDB8 !important; }
+
+.btn-success{
+    width: 100%;
+    border-radius: 16px;
+    background-color: #F3EDE1;
+    border-width: 3px;
+    border-color: #198683;
+    color: #198683;
+    height: 80px;
+  }
+
+.btn-extra {display: none;}
+
+
+
+
+/* de aqui para abajo solo agregar clases en los @media */
+@media (min-width: 576px) {  
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .breaking-news .news-item{ padding:38px 63px 40px 63px;}
+    
+
+    .news-item h1{font-size: 36px;}
+    .news-item p{font-size: 28px;}
+    .news-item label{font-size: 24px; color: #093246 ;}
+
+    .news-item .form-control{min-width: 500px; min-height: 90px; width: 100%;}
+    .news-item .btn-secondary{font-size: 32px; min-height: 80px; min-width: 391px; width: 100%; border-radius: 16px; font-weight: 700;}
+
+    .news-item .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
+    .news-item .text-center {font-size: 24px;}
+
+}
+
+
+/* Desde 993px en adelante: vuelve al centrado y tamaño normal */
+@media (min-width: 992px) {
+    .boton-regresar {display: none;}
+    form .d-flex{ justify-content: center; }
+
+    .news-item .btn-extra {
+      
+    display: block; /* Hace visible el botón */
+    border-radius: 16px;
+    font-size: 26px; min-height: 80px; min-width: 300px;line-height: 2.5;
+  }
+   
+}
