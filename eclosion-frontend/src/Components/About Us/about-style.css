@@ -1,50 +1,19 @@
-
 #container-about-us {
-    margin-top: 50px;
-    padding: 10px;
     position: relative;
     z-index: 1;
 }
 
-body:has(#container-about-us) {
+/*body:has(#container-about-us) {
     background: linear-gradient(to bottom, #90d3ef, #01051d);
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-
-/* Título Sobre Nosotros */
-.sobre-nosotros {
-    font-weight: 750;
-    font-size: 45px;
-    margin-top: 50px;
-}
-
-/* Párrafo introducción */
-.about-main-text {
-    font-weight: 500;
-    text-align: center;
-}
-
-.about-intro-wrapper {
-    margin-bottom: 30px;
-}
-
-/* Quiénes somos */
-.quienes-somos {
-    font-weight: 650;
-    padding: 20px;
-}
-
-.about-logo {
-    width: 150px;
-    height: 150px;
-}
+}*/
 
 /* Párrafos */
 .parrafo-about {
     font-weight: 500;
     text-align: center;
+    height: 100px;
 }
 
 /* Títulos de sección */
@@ -55,24 +24,101 @@ body:has(#container-about-us) {
     margin-bottom: 30px;
 }
 
-.our-goal {
-    color: #1b5c7a;
+/*------>*/
+/*Sobre Nosotros Section*/
+.about-intro {
+    height: 100vh;
+    margin-bottom: none;
+    background-image: url(/src/assets/Pictures/sobrenosotros-bg.jpg);
+    background-size: cover;
+
+}
+
+/* título Sobre Nosotros */
+.sobre-nosotros {
+    font-weight: 750;
+    font-size: 50px;
+    margin-top: 80px;
+}
+
+/* párrafo introducción */
+.about-main-text {
+    font-weight: 600;
+    font-size: 25px;
+    text-align: center;
+    color: #e1edf3;
+}
+
+
+/*------>*/
+/* Quiénes somos Section*/
+.quienes-somos-wrapper {
+    background-image: url(/src/assets/Pictures/quienessomos-bg.jpg);
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.quienes-somos {
+    font-size: 30px;
+    font-weight: 650;
+    padding: 20px;
+    color: #e1edf3;
+}
+.quienes-text {
+    margin-bottom: 50px;
+}
+
+.about-logo {
+    width: 150px;
+    height: 150px;
+}
+
+
+/*------>*/
+/*Nuestra Meta Section*/
+.our-goal-container {
+    height: 300px;
+    background-image: url(/src/assets/Pictures/nuestrameta-bg.jpg);
+    background-size: cover;
+
+}
+.goal-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.our-goal-title {
+    color: #e1edf3;
+    font-size: 30px;
+    font-weight: 650;
+    text-align: center;
 }
 
 .grad-1 {
-    color: #30a5dc;
+    /*color: #30a5dc;*/
+    margin-top: 50px;
 }
 
 .grad-2 {
-    color: #41b3e8;
+    /*color: #41b3e8;*/
 }
 
 .grad-3 {
-    color: #65c4f0;
+    /*color: #65c4f0;*/
+    margin-bottom: 50px;
 }
 
+/*------>*/
+/*Nuestro Equipo Section*/
+.our-team-container {
+    background-image: url(/src/assets/Pictures/nuestroequipo-bg.jpg);
+    background-size: cover;
+}
 .our-team {
     color: #9dd9f5;
+    font-size: 30px;
 }
 
 /*Imágenes Equipo*/
@@ -87,6 +133,8 @@ body:has(#container-about-us) {
     font-weight: 550;
     color: #e1edf3;
 }
+
+
 
 /*Animación Fade In*/
 .fade-in {
@@ -122,6 +170,11 @@ body:has(#container-about-us) {
 /*Resolución Tablet*/
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    .sobre-nosotros {
+        font-size: 65px;
+        margin-top: 85px;
+    }
+
     .about-logo {
         width: 200px;
         height: 200px;
@@ -138,7 +191,11 @@ body:has(#container-about-us) {
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
     .sobre-nosotros {
-        font-size: 55px;
+        font-size: 80px;
+        margin-top: 90px;
+    }
+    .about-main-text {
+        font-size: 35px;
     }
 
     h2 {
@@ -147,6 +204,10 @@ body:has(#container-about-us) {
 
     p {
         font-size: 25px;
+    }
+
+    .about-main-text {
+        margin-top: auto;
     }
 
     .about-logo {

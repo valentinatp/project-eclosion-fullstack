@@ -26,7 +26,7 @@ export const router = createBrowserRouter(
             <Route path="/about" element={<About />} />
             <Route path="/myprofile" element={<MyProfile />} />
             <Route path="/ejemplo" element={<h1>Hola ejemplo</h1>} />
-            <Route path="/createNewsPosts" element={<CreateNewsPosts  />} />
+            
         </Route>
     )
 )
