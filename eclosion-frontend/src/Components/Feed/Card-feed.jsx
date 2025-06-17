@@ -31,6 +31,8 @@ const NoticeCard = ({ noticia, index, liked, commented, handleLike, handleCommen
           <p className='category'>{noticia.category}</p>
         </div>
 
+        
+
         <h5 id='feed-card-notice'>{noticia.title}</h5>
 
         <p className="card-text">
