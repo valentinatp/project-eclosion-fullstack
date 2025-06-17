@@ -32,18 +32,13 @@ return (
                                     id="img-notice-card"
                                     alt={noticia.title}
                                 />
-                                   <br />
-                                <div className="card-body-feed">
-                                   
-                                     <div className='date-and-category'>
-                                   <p>{noticia.date}</p> <p className='category'>{noticia.category}</p>
-                                     </div>
 
-                                    <br />
-                                     <h5 className="card-title">
+                                <div className="card-body-feed">
+                                    <h5 className="card-title">
                                         {noticia.title}
                                     </h5>
-                                    
+                                    <br />
+                                    <p>{noticia.date}</p>
                                     <p className="card-text ">
                                         {noticia.resume_notice}{" "}
                                         <a href={noticia.link_notice} style={{ color: "#198683",fontWeight: "bold",textDecoration: "none"}}>
