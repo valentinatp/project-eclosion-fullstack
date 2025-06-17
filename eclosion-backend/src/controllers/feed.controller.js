@@ -31,8 +31,6 @@ const createNews = async (req, res) => {
     }
 }
 
-
-
 //Controlador consulta a la BD para actualizar noticias en feed
 const refreshNews = async (req, res) => {
     try {
