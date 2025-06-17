@@ -6,6 +6,7 @@ import imageOne from '../../assets/Pictures/estebanm-eclosion.png'
 import imageTwo from '../../assets/Pictures/valet-eclosion.png'
 import imageThree from '../../assets/Pictures/triniv-eclosion.png'
 import imageFour from '../../assets/Pictures/sebastiang-eclosion.png'
+import imageFive from '../../assets/Pictures/rubenv-eclosion.png'
 
 function About() {
   useEffect(() => {
@@ -118,6 +119,10 @@ function About() {
             <div className="col-12 col-md-3 members text-center">
               <img src={imageFour} alt="sebastian guerra" className="img-fluid"/>
               <div className="member-name">Sebastián Guerra</div>
+            </div>
+            <div className="col-12 col-md-3 members text-center">
+              <img src={imageFive} alt="ruben valdebenito" className="img-fluid"/>
+              <div className="member-name">Ruben Valdebenito</div>
             </div>
           </div>
         </div>
