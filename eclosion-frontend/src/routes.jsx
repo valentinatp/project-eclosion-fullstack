@@ -9,6 +9,7 @@ import About from './Components/About Us/About'
 import NotFound from './Components/HTTP States/Error 404/NotFound'
 import MyProfile from './Components/MyPerson/Myperfile'
 import NoticeCard from './Components/Feed/Card-feed'
+import FormCrearNoticias from './Components/Forms/createNewsPost/createNewsPost'
 
 
 
@@ -26,7 +27,8 @@ export const router = createBrowserRouter(
             <Route path="/about" element={<About />} />
             <Route path="/myprofile" element={<MyProfile />} />
             <Route path="/ejemplo" element={<h1>Hola ejemplo</h1>} />
-            
+            //<Route path="/crearNoticia" element={<FormCrearNoticias />} />
+
         </Route>
     )
 )

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
-
+  
 const newsSchema = new Schema({
     author: {
         type: String,
