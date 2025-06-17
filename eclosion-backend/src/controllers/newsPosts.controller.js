@@ -1,4 +1,4 @@
-const Newspost = require('../models/news.post.model')
+const Newspost = require('../models/news.post.model') 
 
 //Controlador crear nueva noticia
 const createNews = async (req, res) => {
@@ -31,11 +31,26 @@ const createNews = async (req, res) => {
     }
 }
 
-
-
 //Controlador consulta a la BD para actualizar noticias en feed
-const refreshNews = (req, res) => {
-    res.status(200).send("Esta es la ruta para recargar el Feed");
+const refreshNews = async (req, res) => {
+    try {
+        const newslist = await Newspost.find();
+        console.log(newslist);
+
+        res.status(200).json({
+            message: "Consulta realizada con exito",
+            status: 200,
+            data: {
+                newsPost : newslist,
+            }
+        })
+    } catch ( error ) {
+        console.log(error)
+        res.status(500).json({
+            message: "Error al crear un post",
+            error: error.message,
+        })
+    }
 }
 
 module.exports = {
