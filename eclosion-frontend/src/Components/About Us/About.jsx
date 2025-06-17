@@ -1,7 +1,7 @@
 import './about-style.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import reactLogo from '../../assets/Pictures/React-Logo-v2.png';
+import reactLogo from '../../../public/Eclosion-Logo.png';
 import imageOne from '../../assets/Pictures/estebanm-eclosion.png'
 import imageTwo from '../../assets/Pictures/valet-eclosion.png'
 import imageThree from '../../assets/Pictures/triniv-eclosion.png'
