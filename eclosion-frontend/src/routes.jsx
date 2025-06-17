@@ -12,6 +12,7 @@ import NoticeCard from './Components/Feed/Card-feed'
 
 
 
+
 export const router = createBrowserRouter(
     createRoutesFromElements(
         // un componente "Route" por cada ruta
@@ -25,6 +26,7 @@ export const router = createBrowserRouter(
             <Route path="/about" element={<About />} />
             <Route path="/myprofile" element={<MyProfile />} />
             <Route path="/ejemplo" element={<h1>Hola ejemplo</h1>} />
+            <Route path="/createNewsPosts" element={<CreateNewsPosts  />} />
         </Route>
     )
 )
