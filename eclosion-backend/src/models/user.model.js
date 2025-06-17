@@ -12,7 +12,7 @@ const userSchema = new Schema({
         required: true,
     },
     age: {
-        type: String,
+        type: Number,
         required: true,
     },
     email: {
@@ -27,7 +27,7 @@ const userSchema = new Schema({
     typeUser: {
         type: String,
         default: 'user', // Valor por defecto
-        enum: ['user', 'admin', 'moderator'], // Opcional: valores permitidos
+        enum: ['user','userVerified', 'admin', 'moderator'], // Opcional: valores permitidos
     },
     statusActive: {
         type: Boolean,
