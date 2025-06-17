@@ -4,6 +4,7 @@
 /* NAVBAR LOGO*/
 .navbar-logo {width: 55px; height: 55px; object-fit: contain;}
 .navbar-logo:hover {transition: 2.2s ease-out; transform: rotateY(360deg);}
+
 .navbar-brand { font-size: 20px; font-weight: 450;}
 .navbar-brand:hover { color: #38b8b4; transition: 0.2s ease-out; }
 .navbar-logo-brand { display: flex; align-items: center; gap: 18px;}
@@ -12,6 +13,7 @@
 .navbar{--bs-navbar-padding-y: 0.3rem;}
 .bg-body-tertiary { background-color: #093246 !important; color: #F3EDE1; }
 .nav-item:hover .nav-link {  color: #38b8b4; transition: 0.2s ease-out; }
+.nav-link:focus{color:  #F3EDE1;} /* arreglo de navbar que no sea vea negro al usar el click */
 .navbar-menu-icon svg  { width: 30px; height: 30px; }
 .navbar-user-icon svg { background-color: #F3EDE1; border-radius: 50%; width: 30px; height: 30px; }
 .navbar-brand, .nav-link { color: #F3EDE1; }
