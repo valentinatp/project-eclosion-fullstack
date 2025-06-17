@@ -2,6 +2,7 @@
 //imporatamos el modelo
 const User = require('../models/user.model')
 const bcrypt = require('bcryptjs')
+const jsonWebToken = require('jsonwebtoken')
 
 //Controlador crear usuario
 const registerUser = async (req, res) => {
@@ -67,15 +68,21 @@ const loginUser = async (req, res) => {
         }
         //Desencriptamos la password
         const validatePassword = bcrypt.compareSync(password, userEmail.password);
-        console.log(userEmail.password)
+
+        //Password incorrecta
         if ( !validatePassword ) {
             return res.status(400).json({ message: "La constraseña no coincide" })
         }
+
+        //Implementamos JWT
+        const jsonToken = jsonWebToken.sign({id: userEmail._id}, "secretCode")
+
         res.status(200).json({
             message: "Usuario logeado correctamente",
             code: 200,
             data: {
                 email: email,
+                token : jsonToken,
             }
         })
     } catch(error) {
