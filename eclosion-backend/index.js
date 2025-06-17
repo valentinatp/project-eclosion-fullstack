@@ -29,6 +29,10 @@ app.use(express.static('./src/public'));
 //Ruta inicial
 app.use('/', require('./src/routes/auth.router'));
 
+//ruta news 
+// const newsRoutes = require('./src/routes/news.routes');
+// app.use('/api/news', newsRoutes);
+
 //Escucha de peticiones
 app.listen( process.env.PORT , () => {
     console.log(`Servidor activo en puerto ${ process.env.PORT }`);
