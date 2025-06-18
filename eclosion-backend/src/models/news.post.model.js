@@ -19,8 +19,8 @@ const newsSchema = new Schema({
         required: true,
     },
     dateNews: {
-        type: String,
-        required: true,
+        type: Date,
+        default: Date.now
     },
     imageUser: String,
     imageNews: String,
