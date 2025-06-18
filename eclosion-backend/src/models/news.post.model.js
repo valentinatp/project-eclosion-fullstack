@@ -28,11 +28,9 @@ const newsSchema = new Schema({
         type: String,
         required: true,
     },
-    
 })
 
 //Creamos la instancia del modelo indicandole la coleccion y su Schema como parametro
-
 const Newspost = model("Newspost", newsSchema);
 
 module.exports = Newspost;

@@ -5,7 +5,6 @@ const { Router } = require('express')
 const router = Router();
 
 //router de usuarios 
-router.get('/user', userId )
 router.post('/login', loginUser )
 router.post('/register', registerUser )
 
