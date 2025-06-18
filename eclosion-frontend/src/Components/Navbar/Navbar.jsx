@@ -43,6 +43,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link to="feed" className="nav-link">Feed</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="feed" className="nav-link">Crear Noticia</Link>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
                                 <ul className="dropdown-menu">
