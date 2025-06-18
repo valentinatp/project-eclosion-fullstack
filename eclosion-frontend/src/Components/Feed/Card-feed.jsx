@@ -5,9 +5,9 @@ import { FaRegComments, FaComments } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { IoIosSend } from "react-icons/io";
 
-const NoticeCard = ({ noticia, index, liked, commented, handleLike, handleComment, show, handleClose, activeIndex }) => {
+const NoticeCard = ({ news, index, liked, commented, handleLike, handleComment, show, handleClose, activeIndex }) => {
 
-  if (!noticia.title || !noticia.img_notice || !noticia.user || !noticia.img_user) return null;
+if ( !news.author || !news.category || !news.title || !news.bodyNews || !news.dateNews || !news.imageUser || !news.imageNews || !news.linkNews ) return null;
 
   return (
     <div className="card-feed d-flex flex-column">
@@ -16,28 +16,28 @@ const NoticeCard = ({ noticia, index, liked, commented, handleLike, handleCommen
       <div className="navbar-feed bg-body-tertiary-perfil">
         <div className="feed-container">
           <a className="navbar-brand d-flex align-items-center">
-            <img src={noticia.img_user} alt={noticia.user} className="d-inline-block align-text-top me-2 img-perfile-feed" />
-            <span className="responsive-user-text">{noticia.user}</span>
+            <img src={news.imageUser} alt={news.user} className="d-inline-block align-text-top me-2 img-perfile-feed" />
+            <span className="responsive-user-text">{news.user}</span>
           </a>
         </div>
       </div>
 
-      {/* Imagen noticia */}
-      <img src={noticia.img_notice} id="img-notice-card" alt={noticia.title} />
+      {/* Imagen news */}
+      <img src={news.imageNews} id="img-notice-card" alt={news.title} />
 
       <div className="card-body-feed">
         <div className='date-and-category'>
-          <p>{new Date(noticia.date).toLocaleDateString()}</p>
-          <p className='category'>{noticia.category}</p>
+          <p>{new Date(news.date).toLocaleDateString()}</p>
+          <p className='category'>{news.category}</p>
         </div>
 
         
 
-        <h5 id='feed-card-notice'>{noticia.title}</h5>
+        <h5 id='feed-card-notice'>{news.title}</h5>
 
         <p className="card-text">
-          {noticia.resume_notice}{" "}
-          <a href={noticia.link_notice} style={{ color: "#198683", fontWeight: "bold", textDecoration: "none" }}>
+          {news.resume_notice}{" "}
+          <a href={news.link_notice} style={{ color: "#198683", fontWeight: "bold", textDecoration: "none" }}>
             Ver más
           </a>
         </p>
