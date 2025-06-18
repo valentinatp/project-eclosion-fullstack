@@ -36,14 +36,14 @@ if ( !news.author || !news.category || !news.title || !news.bodyNews || !news.da
         <h5 id='feed-card-notice'>{news.title}</h5>
 
         <p className="card-text">
-          {news.resume_notice}{" "}
-          <a href={news.link_notice} style={{ color: "#198683", fontWeight: "bold", textDecoration: "none" }}>
+          {news.bodyNews}{" "}
+          <a href={news.linkNews} style={{ color: "#198683", fontWeight: "bold", textDecoration: "none" }}>
             Ver más
           </a>
         </p>
 
         {/* Botones */}
-        <div className="btn-group-feed">
+        <div className="btn-group-feed d-none">
           <button type="button" className="btn btn-outline-success" onClick={() => handleLike(index)}>
             {liked[index] ? <FaHeart color="#284D5D" size={20} /> : <FaRegHeart color="#68BDB8" size={20} />}
           </button>
