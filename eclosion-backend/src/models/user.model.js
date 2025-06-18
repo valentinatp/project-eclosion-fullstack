@@ -2,18 +2,12 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 //Creamos el Schema del modelo
 const userSchema = new Schema({
- 
     name: {
         type: String,
         required: true,
     },
-    lastName: {
-        type: String,
-        required: true,
-    },
     age: {
-        // cambio de string a Number para evitar conflicto y avitar agregar funcion que cambie el dato number a string
-        type: Number,
+        type: String,
         required: true,
     },
     email: {
