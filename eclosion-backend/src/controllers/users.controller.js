@@ -10,7 +10,9 @@ const registerUser = async (req, res) => {
     const { name, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
     
     //Validamos que los datos se inyecten correctamente
-    if ( !name || !age || !email || !password || !typeUser || !statusActive) {
+    
+    if ( !name || !age || !email || !password ) {
+
         //Si falta algun parametro se indica el error al cliente
         res.status(400).json({
             message : "Faltan datos para la creacion del usuario",
