@@ -24,8 +24,8 @@ const FormCrearNoticias = () => {
         <>
             <div className="container-fluid breaking-news">
                 <div className="news-item">
-                    <h1 className="fw-bold mb-2">Nueva Noticia</h1>
-                    <p className="mb-4"><strong>Publica</strong> tu noticia ingresando los siguientes datos</p>
+                    <h1 className="fw-bold mb-2 text-center">Nueva Noticia</h1>
+                    <p className="mb-4 text-center"><strong>Publica</strong> tu noticia ingresando los siguientes datos</p>
                     <form onSubmit={createNewsPost}>
                         <div className="mb-3">
                             <label htmlFor="titulo" className="fw-bold">Título</label>
@@ -53,7 +53,7 @@ const FormCrearNoticias = () => {
                         <div className="mb-3">
                             <label htmlFor="categoria" className="fw-bold">Categoria</label>
                             <select
-                                className="form-select border border-secondary-category"
+                                className="form-select"
                                 id="categoria"
                                 value={Categoria}
                                 onChange={(e) => setCategoria(e.target.value)}
@@ -77,7 +77,7 @@ const FormCrearNoticias = () => {
                                 onChange={(e) => setEnlace(e.target.value)}
                             />
                         </div>
-                        <div className="d-flex justify-content-between">
+                        <div className="d-flex gap-5 justify-content-between">
                             <Link to="/feed" className="btn btn-return fw-bold">Volver</Link>
                             <button type="submit" className="btn btn-secondary fw-bold">Publicar</button>
                         </div>
