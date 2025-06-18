@@ -15,18 +15,18 @@ import { BsEyeSlash } from "react-icons/bs";
 
 const Register = () => {
 
-   const [modalToggled, setmodalToggled] = useState(false);
+  const [modalToggled, setmodalToggled] = useState(false);
 
-    // Función para alternar el estado del modal (abrir/cerrar)
-    function handleModalToggleClick() {
-        setmodalToggled(!modalToggled);
-    }
+  // Función para alternar el estado del modal (abrir/cerrar)
+  function handleModalToggleClick() {
+    setmodalToggled(!modalToggled);
+  }
 
   // const para cambiar estado de input de password entre type text y password
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
-    // Funcion de comprobacion de la contraseña
+  // Funcion de comprobacion de la contraseña
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -73,8 +73,8 @@ const Register = () => {
 
           {/* <BsChevronLeft /> esta etiqueta es un icono que se puede remplazar por cualquier cosa */}
           <Link to="/" className="boton-regresar"><BsChevronLeft /></Link>
-          <h1 className=" fw-bold mb-2">Registro</h1>
-          <p className="mb-4"><strong>Regístrate</strong> ingresando los siguientes datos</p>
+          <h1 className=" fw-bold mb-2 text-center">Registro</h1>
+          <p className="mb-4 text-center">¡Crea tu cuenta y sé parte de <strong>Eclosión!</strong></p>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="nombre" className="fw-bold">Nombre</label>
@@ -130,7 +130,7 @@ const Register = () => {
                   onChange={e => setConfirmPassword(e.target.value)}
                 />
                 <span className="input-eye" onClick={() => setShowConfirm(!showConfirm)} style={{ cursor: "pointer" }} >
-                  {showConfirm ? <BsEye className="prueba-2" /> : <BsEyeSlash className="prueba-2"/>} 
+                  {showConfirm ? <BsEye className="prueba-2" /> : <BsEyeSlash className="prueba-2" />}
                 </span>
               </div>
             </div>
@@ -140,7 +140,7 @@ const Register = () => {
 
 
             <div className="d-flex gap-5">
-              
+
               <Link to="/" className="btn btn-return fw-bold btn-disguise">Volver</Link>
               <button type="submit" className="btn btn-secondary fw-bold">Registrar</button>
             </div>
@@ -159,16 +159,16 @@ const Register = () => {
 
             <p className="mt-4 text-center register-link">
               ¿Ya tienes una cuenta?
-              <Link onClick={handleModalToggleClick} to="/register">Inicia sesión.</Link>
+              <Link onClick={handleModalToggleClick} to="/register"> Inicia sesión.</Link>
             </p>
           </form>
         </div>
       </div>
-            {modalToggled && (
-                <div>
-                    <ModalLogin closeModal={() => setmodalToggled(false)} />
-                </div>
-            )}
+      {modalToggled && (
+        <div>
+          <ModalLogin closeModal={() => setmodalToggled(false)} />
+        </div>
+      )}
     </>
   );
 }
