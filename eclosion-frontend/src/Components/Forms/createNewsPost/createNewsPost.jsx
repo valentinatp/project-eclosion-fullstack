@@ -42,7 +42,7 @@ const FormCrearNoticias = () => {
                         <div className="mb-3">
                             <label htmlFor="contenido" className="fw-bold">Contenido</label>
                             <textarea
-                                className="form-control border border-secondary"
+                                className="form-control border border-secondary-contenido"
                                 id="contenido"
                                 placeholder="Contenido de la noticia"
                                 required
@@ -52,15 +52,19 @@ const FormCrearNoticias = () => {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="categoria" className="fw-bold">Categoria</label>
-                            <input
-                                type="text"
-                                className="form-control border border-secondary"
+                            <select
+                                className="form-select border border-secondary-category"
                                 id="categoria"
-                                placeholder="Playas - Oceanos - Rios - Lagos"
-                                required
                                 value={Categoria}
                                 onChange={(e) => setCategoria(e.target.value)}
-                            />
+                                required
+                            >
+                                <option value="">Seleccione una opción</option>
+                                <option value="playas">Playas</option>
+                                <option value="oceanos">Océanos</option>
+                                <option value="rios">Ríos</option>
+                                <option value="lagos">Lagos</option>
+                            </select>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="enlace" className="fw-bold">URL de la noticia</label>
