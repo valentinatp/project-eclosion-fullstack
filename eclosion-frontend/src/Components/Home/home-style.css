@@ -7,7 +7,10 @@
 .container-cards-visibility-tablet { display: none; }
 .container-cards-visibility-desktop { display: none; }
 
-
+/*Text Welcome*/
+.title-site {
+    font-weight: 550;
+}
 
 @media (max-width: 767px) { 
     .container-cards-categories { overflow: hidden; overflow-x: scroll; }
@@ -38,10 +41,15 @@
         margin-left: 0;
     }
     .container-fluid.cards-visibility-mobile { display: none; }
+    .home-intro-text {
+        padding-right: 100px;
+        padding-left: 100px;
+        justify-content: center;
+    }
 }
-/*Resolucion desktop*/
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
-/*Resolucion desktop*/
-/*XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {  }
+.title-site {
+    font-size: 40px;
+}
+.welcome-home {
+    padding: 20px;
+}
