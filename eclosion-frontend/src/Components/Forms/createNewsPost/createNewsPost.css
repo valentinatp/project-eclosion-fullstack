@@ -14,17 +14,35 @@
 .news-item .btn-secondary{font-size: 18px; min-height: 62px; min-width: 240px; width: 100%; border-radius: 16px; font-weight: 700;}
 .news-item .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
 
+.border-secondary-category {border: 3px solid #68BDB8 !important; }
+.border-secondary-contenido {border: 3px solid #68BDB8 !important; }
 
-.border-secondary {border: 3px solid #68BDB8 !important; }
+.news-item .btn-return {
+    border-radius: 16px;
+    font-size: 22px; 
+    min-height: 60px; 
+    min-width: 20px;
+    line-height: 2.5;
+  }
 
-
-
-
-
+.news-item .btn-secondary{
+    font-size: 22px; 
+    min-height: 60px; 
+    min-width: 20px; 
+    width: 100%; 
+    border-radius: 16px; 
+    }
 
 
 /* de aqui para abajo solo agregar clases en los @media */
 @media (min-width: 576px) {  
+    .news-item .btn-return {
+    border-radius: 16px;
+    font-size: 22px; 
+    min-height: 80px; 
+    min-width: 300px;
+    line-height: 2.5;
+  }
 
 }
 
@@ -39,6 +57,7 @@
 
     .news-item .form-control{min-width: 500px; min-height: 90px; width: 100%;}
     .news-item .btn-secondary{font-size: 32px; min-height: 80px; min-width: 391px; width: 100%; border-radius: 16px; font-weight: 700;}
+    
 
     .news-item .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
     .news-item .text-center {font-size: 24px;}
@@ -57,6 +76,7 @@
     min-height: 80px; 
     min-width: 300px;
     line-height: 2.5;
+    
   }
    
 }
