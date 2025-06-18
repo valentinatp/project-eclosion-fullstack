@@ -42,7 +42,7 @@ const Feed = () => {
 
   return (
     <>
-      <h1 className="text-left">Feed</h1>
+      <h1 className="text-left"></h1>
       <div className="estructura-noticia-completa pt-0">
         {news.map((notice, index) => (
           <NoticeCard
