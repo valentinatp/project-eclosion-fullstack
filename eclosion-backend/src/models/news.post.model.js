@@ -24,11 +24,11 @@ const newsSchema = new Schema({
     },
     imageUser: {
         type: String,
-        default: "https://www.futbox.com/img/v1/918/80d/b85/ad6/279e0443b02d9f2eecaa.png",
+        default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSBoMknyWc5mlpWm0p8LNHG363SZte5JlQg&s",
     },
     imageNews: {
         type: String,
-        default: "https://madero.cl/wp-content/uploads/2025/04/Proyecto-Centenario-v2-e1745038663217.png",
+        default: "https://cientificosdelabasura.ucn.cl/wp-content/uploads/2025/02/CostaRica_MauricioErgas-1024x683.jpg",
     },
     linkNews: {
         type: String,

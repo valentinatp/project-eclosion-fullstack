@@ -7,7 +7,7 @@ import { IoIosSend } from "react-icons/io";
 
 const NoticeCard = ({ news, index, liked, commented, handleLike, handleComment, show, handleClose, activeIndex }) => {
 
-if ( !news.author || !news.category || !news.title || !news.bodyNews || !news.dateNews || !news.imageUser || !news.imageNews || !news.linkNews ) return null;
+if ( !news.author || !news.category || !news.title || !news.bodyNews || !news.imageUser || !news.imageNews || !news.linkNews ) return null;
 
   return (
     <div className="card-feed d-flex flex-column">
