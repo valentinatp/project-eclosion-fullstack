@@ -91,6 +91,8 @@ const Register = () => {
         <Link to="/" className="boton-regresar"><BsChevronLeft /></Link>
         <h1 className="fw-bold mb-2 text-center">Registro</h1>
         <p className="mb-4 text-center">¡Crea tu cuenta y sé parte de <strong>Eclosión!</strong></p>
+
+        
         <form onSubmit={handleSubmit}>
 
           {/*nombre*/}
