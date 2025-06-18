@@ -77,8 +77,8 @@ const FormCrearNoticias = () => {
                                 onChange={(e) => setEnlace(e.target.value)}
                             />
                         </div>
-                        <div className="d-flex justify-content-between">
-                            <Link to="/feed" className="btn btn-return fw-bold">Volver</Link>
+                        <div className="d-flex gap-5 justify-content-between newspost-buttons">
+                            <Link to="/" className="btn btn-return fw-bold btn-disguise">Volver</Link>
                             <button type="submit" className="btn btn-secondary fw-bold">Publicar</button>
                         </div>
                     </form>

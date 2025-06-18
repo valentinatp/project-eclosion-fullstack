@@ -15,7 +15,7 @@
 }
 
 .register-content .btn:hover,
-.register-content .btn:focus {
+.register-content .btn:focus { 
   background-color: #146c6a;
   color: #F3EDE1;
 }
