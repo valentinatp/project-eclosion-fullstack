@@ -7,10 +7,10 @@ const jsonWebToken = require('jsonwebtoken')
  
 //Controlador crear usuario
 const registerUser = async (req, res) => {
-    const { name, lastName, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
+    const { name, age, email, password, typeUser, statusActive } = req.body //express captura los datos del cliente en la propiedad 'body' del objeto 'req'
     
     //Validamos que los datos se inyecten correctamente
-    if ( !name || !lastName || !age || !email || !password || !typeUser || !statusActive) {
+    if ( !name || !age || !email || !password || !typeUser || !statusActive) {
         //Si falta algun parametro se indica el error al cliente
         res.status(400).json({
             message : "Faltan datos para la creacion del usuario",
@@ -140,12 +140,11 @@ const getUserById = async (req, res) => {
 // Controlador para actualizar un usuario
 const updateUser = async (req, res) => {
     const { id } = req.params; // Capturamos el ID desde los parámetros de la ruta
-    const { name, lastName, age, email, typeUser, statusActive } = req.body;
+    const { name, age, email, typeUser, statusActive } = req.body;
 
     try {
         const updatedUser = await User.findByIdAndUpdate(id, {
             name,
-            lastName,
             age,
             email,
             typeUser,
