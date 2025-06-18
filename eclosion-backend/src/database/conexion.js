@@ -10,6 +10,7 @@ const conexionDb = async () => {
             // se debe agregar el link de la URI de conexion de MongoDB.
         await mongoose.connect(process.env.DATA_MONGO_URI)
         console.log('La conexion a la BD fue exitosa')
+        
     } catch (error) {
         //Si falla la consulta, se ejecuta este bloque de codigo
         console.log("Error de conexion a la BD: " + error);
