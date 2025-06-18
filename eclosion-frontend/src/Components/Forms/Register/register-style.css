@@ -1,24 +1,69 @@
-.boton-regresar { font-size: 35px; color: #093246; }
-.btn-return .boton-volver{width: 50%;font-weight: 500; background-color: #F3EDE1;border: 1px solid #198683;color: #198683;padding: 10px;text-align: center;border-radius: 5px;}
+.boton-regresar {
+  font-size: 30px;
+  color: #093246;
+}
 
-.register-content .btn:hover, .register-content .btn:focus { background-color: #146c6a; color: #F3EDE1; }
+.btn-return .boton-volver {
+  width: 50%;
+  font-weight: 500;
+  background-color: #F3EDE1;
+  border: 1px solid #198683;
+  color: #198683;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.register-content .btn:hover,
+.register-content .btn:focus {
+  background-color: #146c6a;
+  color: #F3EDE1;
+}
 
 
 
-.register-dialog .register-content{ padding:40px 24.5px 45px 24.5px; }
-.register-content h1{font-size: 32px;}
-.register-content p{font-size: 16px;}
-.register-content label{font-size: 18px; color: #093246 ;}
-.register-content .form-control{min-width: 240px; min-height: 62px; width: 100%;}
-.register-content .btn-secondary{font-size: 18px; min-height: 62px; min-width: 240px; width: 100%; border-radius: 16px; font-weight: 700;}
-.register-content .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
+.register-dialog .register-content {
+  padding: 40px 24.5px 45px 24.5px;
+}
+
+.register-content h1 {
+  font-size: 32px;
+}
+
+.register-content p {
+  font-size: 18px;
+}
+
+.register-content label {
+  font-size: 18px;
+  color: #093246;
+}
+
+.register-content .form-control {
+  min-width: 240px;
+  min-height: 55px;
+  width: 100%;
+}
+
+.register-content .btn-secondary {
+  font-size: 20px;
+  min-height: 55px;
+  min-width: 240px;
+  width: 100%;
+  border-radius: 16px;
+  font-weight: 700;
+}
+
+.register-content .register-link a {
+  color: #198683;
+  font-weight: 700;
+  text-decoration: none;
+}
 
 
+/* Cambia posición y tamaño de ojo */
 
-
-/* Cambia posicion y tamaño de ojo */
-
-.register-content .input-eye{ 
+.register-content .input-eye {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -34,44 +79,112 @@
 
 /* Estilo de los botones de registro */
 
-.btn.boton-registrar{width: 60%;font-weight: 500;background-color: #198683;border: 1px solid #198683;color: #F3EDE1;padding: 10px;text-align: center;border-radius: 5px;}
-.boton-iniciar-sesion {color: #198683;text-decoration: none;font-weight: 700}
-.reedireccionando {font-size: 2rem;color: #1d3557;}
-
-.boton-volver {display: none;}
-/* de aqui para abajo solo agregar clases en los @media */
-@media (min-width: 576px) {  
-
+.btn.boton-registrar {
+  width: 60%;
+  font-weight: 500;
+  background-color: #198683;
+  border: 1px solid #198683;
+  color: #F3EDE1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
 }
+
+.boton-iniciar-sesion {
+  color: #198683;
+  text-decoration: none;
+  font-weight: 700
+}
+
+.reedireccionando {
+  font-size: 2rem;
+  color: #1d3557;
+}
+
+.boton-volver {
+  display: none;
+}
+
+/* de aqui para abajo solo agregar clases en los @media */
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .register-dialog .register-content{ padding:38px 63px 40px 63px;}
-    
+  .register-dialog .register-content {
+    padding: 38px 63px 40px 63px;
+  }
 
-    .register-content h1{font-size: 36px;}
-    .register-content p{font-size: 28px;}
-    .register-content label{font-size: 24px; color: #093246 ;}
 
-    .register-content .form-control{min-width: 500px; min-height: 90px; width: 100%;}
-    .register-content .btn-secondary{font-size: 32px; min-height: 80px; min-width: 391px; width: 100%; border-radius: 16px; font-weight: 700;}
+  .register-content h1 {
+    font-size: 36px;
+  }
 
-    .register-content .register-link a { color: #198683; font-weight: 700; text-decoration: none; }
-    .register-content .text-center {font-size: 24px;}
+  .register-content p {
+    font-size: 24px;
+  }
+
+  .register-content label {
+    font-size: 24px;
+    color: #093246;
+  }
+
+  .register-content .btn-secondary {
+    font-size: 26px;
+    min-height: 60px;
+    min-width: 391px;
+    width: 100%;
+    border-radius: 16px;
+    font-weight: 700;
+  }
+
+  .register-content .register-link a {
+    color: #198683;
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .form-control {
+  min-width: 240px;
+  min-height: 60px;
+  width: 100%;
+}
 
 }
 
 
 /* Desde 993px en adelante: vuelve al centrado y tamaño normal */
 @media (min-width: 992px) {
-    .boton-regresar {display: none;}
-    form .d-flex{ justify-content: center; }
-
-    .register-content .btn-disguise {
-      
-    display: block; /* Hace visible el botón */
-    border-radius: 16px;
-    font-size: 26px; min-height: 80px; min-width: 300px;line-height: 2.5;
+  .boton-regresar {
+    display: none;
+    min-height: 60px;
   }
-   
+
+  form .d-flex {
+    justify-content: center;
+  }
+
+  .form-control {
+  min-width: 240px;
+  min-height: 60px;
+  width: 100%;
+}
+  .register-content h1 {
+  font-size: 40px;
+  }
+  .register-content label {
+  font-size: 26px;
+  
+}
+
+  .register-content .btn-disguise {
+
+    display: block;
+    /* Hace visible el botón */
+    border-radius: 16px;
+    font-size: 26px;
+    min-height: 60px;
+    min-width: 300px;
+  }
+
 }
