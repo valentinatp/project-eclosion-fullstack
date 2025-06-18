@@ -9,14 +9,14 @@ const newsItemList = [
     },
     {
         id: 2,
-        category : "océanos",
+        category : "oceanos",
         title: "Científicos de la U. de Chile medirán contaminación por microplásticos y toxinas en el mar de Chiloé",
         paragraph: "El proyecto busca medir la contaminación por microplásticos y toxinas emergentes en Chiloé para entregar información confiable a las autoridades y apoyar la toma de decisiones.",
         pathImage : "https://portaluchile.uchile.cl//.imaging/default/dam/imagenes/Uchile/imagenes-noticias/184572_1_cientificosdelicbm-1-800-l_L/jcr:content.jpg"
     },
      {
         id: 3,
-        category : "océanos",
+        category : "oceanos",
         title: "Consecuencias de la contaminación: los residuos plásticos ponen en riesgo la vida de 134 especies marinas.",
         paragraph: "Peces, tortugas, aves marinas, focas, y ballenas que viven en los océanos confunden estos residuos con su comida.",
         pathImage : "https://www.canal26.com/media/image/2024/01/11/582895.jpg"
