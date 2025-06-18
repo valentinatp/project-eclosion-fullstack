@@ -22,8 +22,14 @@ const newsSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    imageUser: String,
-    imageNews: String,
+    imageUser: {
+        type: String,
+        default: "https://www.futbox.com/img/v1/918/80d/b85/ad6/279e0443b02d9f2eecaa.png",
+    },
+    imageNews: {
+        type: String,
+        default: "https://madero.cl/wp-content/uploads/2025/04/Proyecto-Centenario-v2-e1745038663217.png",
+    },
     linkNews: {
         type: String,
         required: true,
