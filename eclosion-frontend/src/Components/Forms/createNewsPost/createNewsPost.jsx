@@ -63,8 +63,8 @@ const FormCrearNoticias = () => {
                                 id="titulo"
                                 placeholder="Título de la noticia"
                                 required
-                                value={titulo}
-                                onChange={(e) => setTitulo(e.target.value)}
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">
@@ -74,8 +74,8 @@ const FormCrearNoticias = () => {
                                 id="contenido"
                                 placeholder="Contenido de la noticia"
                                 required
-                                value={contenido}
-                                onChange={(e) => setContenido(e.target.value)}
+                                value={bodyNews}
+                                onChange={(e) => setBodyNews(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">
@@ -83,8 +83,8 @@ const FormCrearNoticias = () => {
                             <select
                                 className="form-select"
                                 id="categoria"
-                                value={Categoria}
-                                onChange={(e) => setCategoria(e.target.value)}
+                                value={category}
+                                onChange={(e) => setCategory(e.target.value)}
                                 required
                             >
                                 <option value="">Seleccione una opción</option>
@@ -101,8 +101,8 @@ const FormCrearNoticias = () => {
                                 className="form-control border border-secondary"
                                 id="enlace"
                                 placeholder="URL de la noticia"
-                                value={enlace}
-                                onChange={(e) => setEnlace(e.target.value)}
+                                value={linkNews}
+                                onChange={(e) => setLinkNews(e.target.value)}
                             />
                         </div>
                         <div className="d-flex gap-5 justify-content-between">
@@ -110,12 +110,10 @@ const FormCrearNoticias = () => {
                             <button type="submit" className="btn btn-secondary fw-bold">Publicar</button>
                         </div>
                     </form>
-
                 </div>
-              </form>
             </div>
-        </div>
-    );
+        </>
+    )
 };
 
 export default FormCrearNoticias;
