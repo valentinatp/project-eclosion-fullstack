@@ -41,10 +41,10 @@ const Navbar = () => {
                                 <Link to="/about" className="nav-link">Sobre Nosotros</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="feed" className="nav-link">Feed</Link>
+                                <Link to="/feed" className="nav-link">Feed</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="feed" className="nav-link">Crear Noticia</Link>
+                                <Link to="/create-news" className="nav-link">Crear Noticia</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>

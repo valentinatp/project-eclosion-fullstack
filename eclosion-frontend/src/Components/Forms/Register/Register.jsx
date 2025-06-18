@@ -6,6 +6,9 @@ import ModalLogin from '../ModalLogin/ModalLogin';
 //import icon para eye y back
 import { BsChevronLeft, BsEye, BsEyeSlash } from "react-icons/bs";
 
+//import de servicio de api para que funcione el token
+import api from '../../../services/api'
+
 const Register = () => {
   // Función para alternar el estado del modal (abrir/cerrar)
   const [modalToggled, setmodalToggled] = useState(false);
@@ -15,13 +18,22 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
-  // Definición de parametros para almacenarlo
-  const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
-  const [edad, setEdad] = useState("");
+  //// Definición de parametros para almacenarlo
+  // const [nombre, setNombre] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [edad, setEdad] = useState("");
+
+  //otra entrucutra para almacenar los parametros
+  const [formData, setFormData] = useState ({name: "", age:"", email: "", password: ""})
+
+
+
+
+
+
 
    // Funcion de comprobacion de la contraseña
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   // error o succes dependiendo del comparacion de contraseña
@@ -36,7 +48,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
+    if (formData.password !== confirmPassword) {
       setError(true);
       setSuccess(false);
       setMensaje("Las contraseñas no coinciden.");
@@ -45,38 +57,44 @@ const Register = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:4001/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: nombre,
-          age: edad,
-          email,
-          password,
-          typeUser: "user",
-          statusActive: true,
-        }),
-      });
+      // const response = await fetch("http://localhost:4001/register", {
 
-      const data = await response.json();
 
-      if (!response.ok) {
-        setError(true);
-        setMensaje(data.message || "Ocurrió un error al registrar.");
+      await api.post("/register", formData);
+      navigate("/")
+       
+        // headers: { "Content-Type": "application/json" },
+        // body: JSON.stringify({
+        //   name: nombre,
+        //   age: edad,
+        //   email,
+        //   password,
+
+        // }),
+      
+    // ); 
+      
+
+      // const data = await response.json();
+
+      // if (!response.ok) {
+      //   setError(true);
+      //   setMensaje(data.message || "Ocurrió un error al registrar.");
 
   // si las contrasenas no son distintas, activar secuenca de pantalla de carga y texto de registro exitoso
-      } else {
-        setError(false);
-        setSuccess(true);
-        setMensaje("");
-        setTimeout(() => {
-          setLoading(false);
-          navigate("/");
-        }, 6000);
-      }
+      // } else {
+      //   setError(false);
+      //   setSuccess(true);
+      //   setMensaje("");
+      //   setTimeout(() => {
+      //     setLoading(false);
+      //     navigate("/");
+      //   }, 6000);
+      // }
     } catch (err) {
       setError(true);
-      setMensaje("Error del servidor.");
+      setMensaje("Error dev registro" + err.response.error); // Si el error tiene un mensaje específico, úsalo
+      console.error("Error en el registro:", err); // Registrar el error completo para depuración
     } finally {
       setLoading(false);
     }
@@ -98,23 +116,23 @@ const Register = () => {
           {/*nombre*/}
           <div className="mb-3">
             <label htmlFor="nombre" className="fw-bold">Nombre</label>
-            <input type="text" className="form-control border border-secondary" id="nombre" placeholder="Nombre y Apellido" required value={nombre} onChange={e => setNombre(e.target.value)} />
+            <input type="text" className="form-control border border-secondary" id="nombre" placeholder="Nombre y Apellido" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
           </div>
           {/*email*/}
           <div className="mb-3">
             <label htmlFor="email" className="fw-bold">Email</label>
-            <input type="email" className="form-control border border-secondary" id="email" placeholder="ejemplo@email.com" required value={email} onChange={e => setEmail(e.target.value)} />
+            <input type="email" className="form-control border border-secondary" id="email" placeholder="ejemplo@email.com" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
           </div>
           {/*edad*/}
           <div className="mb-3">
             <label htmlFor="edad" className="fw-bold">Edad</label>
-            <input type="number" className="form-control border border-secondary" id="edad" placeholder="Ingresa tu edad" required value={edad} onChange={e => setEdad(e.target.value)} />
+            <input type="number" className="form-control border border-secondary" id="edad" placeholder="Ingresa tu edad" required value={formData.age} onChange={(e) => setFormData({...formData, age: e.target.value})} />
           </div>
           {/*contraseña*/}
           <div className="mb-3">
             <label htmlFor="password" className="form-label fw-bold">Contraseña</label>
             <div className="position-relative">
-              <input type={showPassword ? "text" : "password"} className="form-control border border-secondary" id="password" placeholder="Ingresa tu contraseña" required value={password} onChange={e => setPassword(e.target.value)} />
+              <input type={showPassword ? "text" : "password"} className="form-control border border-secondary" id="password" placeholder="Ingresa tu contraseña" required value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} />
               <span className="input-eye" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <BsEye /> : <BsEyeSlash />}</span>
             </div>
           </div>
