@@ -11,6 +11,7 @@ const registerUser = async (req, res) => {
     
     //Validamos que los datos se inyecten correctamente
     if ( !name || !age || !email || !password ) {
+
         //Si falta algun parametro se indica el error al cliente
         res.status(400).json({
             message : "Faltan datos para la creacion del usuario",
@@ -140,12 +141,11 @@ const getUserById = async (req, res) => {
 // Controlador para actualizar un usuario
 const updateUser = async (req, res) => {
     const { id } = req.params; // Capturamos el ID desde los parámetros de la ruta
-    const { name, lastName, age, email, typeUser, statusActive } = req.body;
+    const { name, age, email, typeUser, statusActive } = req.body;
 
     try {
         const updatedUser = await User.findByIdAndUpdate(id, {
             name,
-            lastName,
             age,
             email,
             typeUser,
